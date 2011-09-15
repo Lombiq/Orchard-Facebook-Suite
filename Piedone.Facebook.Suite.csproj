@@ -91,7 +91,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ConnectController.cs" />
-    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Driver\FacebookFacepileDriver.cs" />
     <Compile Include="Driver\FacebookLikeButtonDriver.cs" />
     <Compile Include="Filters\FacebookSuiteFilter.cs" />
@@ -114,7 +113,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Helpers\FacebookUserDataMapper.cs" />
-    <Compile Include="MissingSettingsBanner.cs" />
     <Compile Include="Models\FacebookFacepile.cs" />
     <Compile Include="Models\FacebookLikeButton.cs" />
     <Compile Include="Models\FacebookCommentsBox.cs" />
@@ -147,6 +145,8 @@
     <Content Include="Views\WidthEditor.cshtml" />
     <Content Include="Views\EditorTemplates\Parts\FacebookFacepile.cshtml" />
     <Content Include="Views\Parts\FacebookFacepile.cshtml" />
+    <Content Include="Views\FacebookConnectNotAuthenticated.cshtml" />
+    <Content Include="Views\FacebookConnectAuthenticated.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\EditorTemplates\Parts.FacebookSuiteSettings.SiteSettings.cshtml" />

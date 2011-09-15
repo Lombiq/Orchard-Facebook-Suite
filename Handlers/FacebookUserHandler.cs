@@ -22,15 +22,5 @@ namespace Piedone.Facebook.Suite.Handlers
             //Filters.Add(new ActivatingFilter<FacebookUserPart>("FacebookUser"));
             Filters.Add(StorageFilter.For(repository));
         }
-
-        //protected override void GetItemMetadata(GetContentItemMetadataContext context)
-        //{
-        //    var part = context.ContentItem.As<UserPart>();
-
-        //    if (part != null)
-        //    {
-        //        context.Metadata.Identity.Add("User.UserName", part.UserName);
-        //    }
-        //}
     }
 }

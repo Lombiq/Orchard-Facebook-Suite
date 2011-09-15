@@ -193,13 +193,21 @@ namespace Piedone.Facebook.Suite.Services
         /// <inheritdoc/>
         public FacebookUserPart GetFacebookUserPart(int id)
         {
-            return _contentManager.Get<FacebookUserPart>(id);
+            // This way if no entry was found, null will be returned. This is preferred.
+            // _contentManager.Get<FacebookUserPart>(id); would return an empty object.
+            return _contentManager
+                .Query<FacebookUserPart, FacebookUserPartRecord>()
+                .Where(u => u.Id == id).List().FirstOrDefault<FacebookUserPart>();
         }
 
 
         public FacebookUserPart GetAuthenticatedFacebookUserPart()
         {
-            return _authenticationService.GetAuthenticatedUser().As<FacebookUserPart>();
+            // _authenticationService.GetAuthenticatedUser().As<FacebookUserPart>(); would
+            // return an empty object, not null if no entry was found. See GetFacebookUserPart(int id).
+            var authenticatedUser = _authenticationService.GetAuthenticatedUser();
+            if (authenticatedUser == null) return null;
+            return GetFacebookUserPart(authenticatedUser.Id);
         }
     }
 }

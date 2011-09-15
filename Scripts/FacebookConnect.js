@@ -29,7 +29,6 @@
                 that = this;
                 $("#facebook-logout-link").click(function (event) {
                     event.preventDefault();
-                    returnUrl = "/OrchardLocal/Users/Account/LogOff?ReturnUrl=" + returnUrl;
                     that.logout(returnUrl);
                 });
             },

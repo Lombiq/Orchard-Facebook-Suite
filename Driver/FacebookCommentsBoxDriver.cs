@@ -7,20 +7,12 @@ using Orchard.ContentManagement.Drivers;
 using Orchard;
 using Piedone.Facebook.Suite.Models;
 using Orchard.Environment.Extensions;
-using Orchard.UI.Notify;
-using Orchard.Localization;
 
 namespace Piedone.Facebook.Suite.Drivers
 {
     [OrchardFeature("Piedone.Facebook.Suite.CommentsBox")]
     public class FacebookCommentsBoxDriver : ContentPartDriver<FacebookCommentsBoxPart>
     {
-        private readonly INotifier _notifier;
-
-        public FacebookCommentsBoxDriver(INotifier notifier)
-        {
-            _notifier = notifier;
-        }
         protected override DriverResult Display(FacebookCommentsBoxPart part, string displayType, dynamic shapeHelper)
         {
             return ContentShape("Parts_FacebookCommentsBox",
@@ -44,7 +36,6 @@ namespace Piedone.Facebook.Suite.Drivers
         protected override DriverResult Editor(FacebookCommentsBoxPart part, IUpdateModel updater, dynamic shapeHelper)
         {
             updater.TryUpdateModel(part, Prefix, null, null);
-            _notifier.Add(NotifyType.Error, NullLocalizer.Instance("kkkkk"));
             return Editor(part, shapeHelper);
         }
     }

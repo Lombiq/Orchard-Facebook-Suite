@@ -11,50 +11,55 @@ using Piedone.Facebook.Suite.Services;
 using Piedone.Facebook.Suite.Helpers;
 using System.Dynamic;
 using Orchard.UI.Notify;
+using Orchard.Security;
 
 namespace Piedone.Facebook.Suite.Drivers
 {
     [OrchardFeature("Piedone.Facebook.Suite.Connect")]
     public class FacebookConnectsDriver : ContentPartDriver<FacebookConnectPart>
     {
+        private readonly IAuthenticationService _authenticationService;
         private readonly IFacebookConnectService _facebookConnectService;
         private readonly IFacebookSuiteService _facebookSuiteService;
-        //private readonly INotifier _notifier;
 
         public FacebookConnectsDriver(
+            IAuthenticationService authenticationService,
             IFacebookConnectService facebookConnectService,
-            IFacebookSuiteService facebookSuiteService//, INotifier notifier
+            IFacebookSuiteService facebookSuiteService
             )
         {
+            _authenticationService = authenticationService;
             _facebookConnectService = facebookConnectService;
             _facebookSuiteService = facebookSuiteService;
-            //_notifier = notifier;
         }
 
         protected override DriverResult Display(FacebookConnectPart part, string displayType, dynamic shapeHelper)
         {
+            // TODO: Ne jelenjen meg egyáltalán, ha auth, de nem connected
+            bool isAuthenticated = _authenticationService.GetAuthenticatedUser() != null;
             var currentUserPart = _facebookConnectService.GetAuthenticatedFacebookUserPart();
+            bool isConnected = currentUserPart != null;
+            
             dynamic CurrentUser = new ExpandoObject();
 
-            bool isAuthorized = currentUserPart != null;
-            if (!isAuthorized) // Not authenticated
+            if (!isAuthenticated)
             {
                 string[] permissions = FacebookConnectHelper.PermissionSettingsToArray(part.Permissions);
 
                 if (part.AutoLogin)
                 {
-                    isAuthorized = _facebookConnectService.Authorize(
+                    isConnected = _facebookConnectService.Authorize(
                         permissions: FacebookConnectHelper.PermissionSettingsToArray(part.Permissions),
                         onlyAllowVerified: part.OnlyAllowVerified);
-                    // MAJD string loginUrl = "https://www.facebook.com/dialog/oauth?client_id=" +  _facebookSuiteService.FacebookSuiteSettingsPart.AppId + "&redirect_uri=YOUR_URL&scope=email,read_stream";
-                    if (isAuthorized)
+                    // string loginUrl = "https://www.facebook.com/dialog/oauth?client_id=" +  _facebookSuiteService.FacebookSuiteSettingsPart.AppId + "&redirect_uri=YOUR_URL&scope=email,read_stream";
+                    if (isConnected)
                     {
                         currentUserPart = _facebookConnectService.GetAuthenticatedFacebookUserPart();
                     }
                 }
             }
 
-            if (isAuthorized)
+            if (isConnected)
             {
                 CurrentUser.Name = currentUserPart.Name;
                 CurrentUser.PictureLink = currentUserPart.PictureLink;
@@ -64,8 +69,8 @@ namespace Piedone.Facebook.Suite.Drivers
 
             return ContentShape("Parts_FacebookConnect",
                 () => shapeHelper.Parts_FacebookConnect(
-                                        IsAuthorized: isAuthorized,
-                                        AutoLogin: part.AutoLogin,
+                                        IsAuthenticated: isAuthenticated,
+                                        IsConnected: isConnected,
                                         Permissions: part.Permissions,
                                         OnlyAllowVerified: part.OnlyAllowVerified,
                                         CurrentUser: CurrentUser));
@@ -84,10 +89,6 @@ namespace Piedone.Facebook.Suite.Drivers
         // POST
         protected override DriverResult Editor(FacebookConnectPart part, IUpdateModel updater, dynamic shapeHelper)
         {
-            _facebookConnectService.Authorize();
-            ValidationDictionaryTranscriber.TranscribeValidationDictionaryErrorsToUpdater(
-                _facebookConnectService.ValidationDictionary,
-                updater);
             updater.TryUpdateModel(part, Prefix, null, null);
 
             return Editor(part, shapeHelper);

@@ -45,16 +45,6 @@ namespace Piedone.Facebook.Suite.Migrations
                 .Column("IsVerified", DbType.Boolean)
             );
 
-            //ContentDefinitionManager.AlterTypeDefinition("User",
-            //    cfg => cfg
-            //        .WithPart(typeof(FacebookUserPart).Name)
-            //    );
-
-            //ContentDefinitionManager.AlterTypeDefinition("FacebookUser",
-            //   cfg => cfg
-            //       .WithPart(typeof(FacebookUserPart).Name)
-            //    );
-
 
             return 1;
         }
