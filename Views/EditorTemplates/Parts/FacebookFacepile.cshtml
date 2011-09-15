@@ -1,0 +1,22 @@
+﻿@model Piedone.Facebook.Suite.Models.FacebookFacepilePart
+<fieldset>
+    <legend>@T("Facebook Facepile Widget Settings")</legend>
+    <ol>
+        <li>
+            @Display.WidthEditor(Value: Model.Width)
+        </li>
+        <li>
+            @Display.ColorSchemeSelector(Selected: Model.ColorScheme)
+        </li>
+        <li>
+            <label for="MaxRows">@T("Max rows")</label>
+            @Html.TextBoxFor(model => model.MaxRows)
+            @Html.ValidationMessageFor(model => model.MaxRows)
+        </li>
+        <li>
+            <label for="Size">@T("Size")</label>
+            @Html.DropDownListFor(model => model.Size, new SelectList(new[] { new SelectListItem { Text = "small", Value = "small" }, new SelectListItem { Text = "large", Value = "large" } }, "Text", "Value"))
+            @Html.ValidationMessageFor(model => model.Size)
+        </li>
+    </ol>
+</fieldset>

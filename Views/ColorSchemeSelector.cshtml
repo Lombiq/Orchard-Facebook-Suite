@@ -1,0 +1,3 @@
+﻿<label for="ColorScheme">@T("Color scheme")</label>
+@Html.DropDownList("ColorScheme", new SelectList(new[] { new SelectListItem { Text = "light", Value = "light" }, new SelectListItem { Text = "dark", Value = "dark" } }, "Text", "Value", Model.Selected))
+@Html.ValidationMessage("ColorScheme")

@@ -1,0 +1,20 @@
+﻿@{ Layout.Title = T("Facebook Suite Settings").ToString(); }
+
+@model Piedone.Facebook.Suite.Models.FacebookSuiteSettingsPart
+
+<fieldset>
+  <legend>@T("Facebook App Settings")</legend>
+  <span class="hint">@T("If set, Facebook Suite features will behave as part of the app.")</span>
+  <ol>
+    <li>
+      <label for="AppId">@T("App ID")</label>
+      @Html.TextBoxFor(model => model.AppId)
+      @Html.ValidationMessageFor(model => model.AppId)
+    </li>
+    <li>
+      <label for="AppSecret">@T("App Secret")</label>
+      @Html.TextBoxFor(model => model.AppSecret)
+      @Html.ValidationMessageFor(model => model.AppSecret)
+    </li>
+  </ol>
+</fieldset>

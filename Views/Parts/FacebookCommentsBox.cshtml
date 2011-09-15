@@ -1,0 +1,3 @@
+﻿@using Orchard.Utility.Extensions; @*For Request.ToUrlString()*@
+
+<fb:comments href="@ViewContext.RequestContext.HttpContext.Request.ToUrlString()" num_posts="@Model.NumberOfPosts" width="@Model.Width" colorscheme="@Model.ColorScheme"></fb:comments>

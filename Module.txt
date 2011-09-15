@@ -1,0 +1,33 @@
+Name: Facebook Suite
+AntiForgery: enabled
+Author: Piedone
+Website: http://orchardproject.net/gallery/
+Version: 1.0
+OrchardVersion: 1.2
+Description: Provides a variaty of Facebook-related features.
+Features:
+    Piedone.Facebook.Suite:
+		Name: Facebook Suite Base
+        Description: Provides a page to set Facebook App settings.
+		Category: Facebook Suite
+		Dependencies: Orchard.jQuery
+	Piedone.Facebook.Suite.Connect:
+		Name: Facebook Connect
+        Description: Lets user authenticate with their Facebook account.
+		Category: Facebook Suite
+		Dependencies: Orchard.Users, Piedone.Facebook.Suite, Orchard.Widgets
+	Piedone.Facebook.Suite.CommentsBox:
+		Name: Facebook Comments Box
+        Description: Adds the ability to add the Facebook Comments Box social plugin as a widget to zones or content types
+		Category: Facebook Suite
+		Dependencies: Orchard.Widgets, Piedone.Facebook.Suite
+	Piedone.Facebook.Suite.LikeButton:
+		Name: Facebook Like Button
+        Description: Adds the ability to add the Facebook Like button social plugin as a widget to zones or content types
+		Category: Facebook Suite
+		Dependencies: Orchard.Widgets, Piedone.Facebook.Suite
+	Piedone.Facebook.Suite.Facepile:
+		Name: Facebook Facepile
+        Description: Adds the ability to add the Facebook Facepile button social plugin as a widget to zones or content types
+		Category: Facebook Suite
+		Dependencies: Orchard.Widgets, Piedone.Facebook.Suite

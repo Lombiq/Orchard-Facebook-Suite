@@ -1,0 +1,17 @@
+﻿@model Piedone.Facebook.Suite.Models.FacebookCommentsBoxPart
+<fieldset>
+    <legend>@T("Facebook Comments Box Widget Settings")</legend>
+    <ol>
+        <li>
+            <label for="NumberOfPosts">@T("Number of posts")</label>
+            @Html.TextBoxFor(model => model.NumberOfPosts)
+            @Html.ValidationMessageFor(model => model.NumberOfPosts)
+        </li>
+        <li>
+            @Display.WidthEditor(Value: Model.Width)
+        </li>
+        <li>
+            @Display.ColorSchemeSelector(Selected: Model.ColorScheme)
+        </li>
+    </ol>
+</fieldset>

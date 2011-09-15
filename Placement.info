@@ -1,0 +1,20 @@
+﻿<Placement>
+  <!--Suite settings-->
+  <Place Parts_FacebookSuiteSettings_SiteSettings="Content:10"/>
+
+  <!--Connect-->
+  <Place Parts_FacebookConnect_Edit="Content:7.5"/>
+  <Place Parts_FacebookConnect="Content:10"/>
+  
+  <!--Comments box-->
+  <Place Parts_FacebookCommentsBox_Edit="Content:7.6"/>
+  <Place Parts_FacebookCommentsBox="Content:10.3"/>
+
+  <!--Like button-->
+  <Place Parts_FacebookLikeButton_Edit="Content:7.4"/>
+  <Place Parts_FacebookLikeButton="Content:10.1"/>
+
+  <!--Facepile-->
+  <Place Parts_FacebookFacepile_Edit="Content:7.5"/>
+  <Place Parts_FacebookFacepile="Content:10.2"/>
+</Placement>

@@ -1,0 +1,50 @@
+﻿@model Piedone.Facebook.Suite.Models.FacebookLikeButtonPart
+<fieldset>
+    <legend>@T("Facebook Like Button Widget Settings")</legend>
+    <ol>
+        <li>
+            @Html.EditorFor(m => m.EnableSendButton)
+            <label for="@Html.FieldIdFor(m => m.EnableSendButton)" class="forcheckbox">@T("Enable send button")</label>
+            @Html.ValidationMessageFor(m => m.EnableSendButton)
+        </li>
+        <li>
+            <label for="LayoutStyle">@T("Layout style")</label>
+            @Html.DropDownListFor(model => model.LayoutStyle,
+            new SelectList(new[] { 
+                new SelectListItem { Text = "standard", Value = "standard" }, 
+                new SelectListItem { Text = "button_count", Value = "button_count" }, 
+                new SelectListItem { Text = "box_count", Value = "box_count" } 
+            }, "Text", "Value"))
+            @Html.ValidationMessageFor(model => model.LayoutStyle)
+        </li>
+        <li>
+            @Display.WidthEditor(Value: Model.Width)
+        </li>
+        <li>
+            @Html.EditorFor(m => m.ShowFaces)
+            <label for="@Html.FieldIdFor(m => m.ShowFaces)" class="forcheckbox">@T("Show faces")</label>
+            @Html.ValidationMessageFor(m => m.ShowFaces)
+        </li>
+        <li>
+            <label for="VerbToDisplay">@T("Verb to display")</label>
+            @Html.DropDownListFor(model => model.VerbToDisplay, new SelectList(new[] { new SelectListItem { Text = "like", Value = "like" }, new SelectListItem { Text = "recommend", Value = "recommend" } }, "Text", "Value"))
+            @Html.ValidationMessageFor(model => model.VerbToDisplay)
+        </li>
+        <li>
+            @Display.ColorSchemeSelector(Selected: Model.ColorScheme)
+        </li>
+        <li>
+            <label for="Font">@T("Font")</label>
+            @Html.DropDownListFor(model => model.Font,
+            new SelectList(new[] { 
+                new SelectListItem { Text = "Arial", Value = "Arial" }, 
+                new SelectListItem { Text = "Lucida Grande", Value = "Lucida Grande" }, 
+                new SelectListItem { Text = "Segoe Ui", Value = "Segoe Ui" }, 
+                new SelectListItem { Text = "Tahoma", Value = "Tahoma" }, 
+                new SelectListItem { Text = "Trebuchet MS", Value = "Trebuchet MS" }, 
+                new SelectListItem { Text = "Verdana", Value = "Verdana" } 
+            }, "Text", "Value"))
+            @Html.ValidationMessageFor(model => model.Font)
+        </li>
+    </ol>
+</fieldset>
