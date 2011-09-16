@@ -129,6 +129,7 @@
     <Compile Include="Services\IFacebookSuiteService.cs" />
     <Compile Include="Validation\IServiceValidationDictionary.cs" />
     <Compile Include="Validation\IValidationDictionary.cs" />
+    <Compile Include="Validation\ModelStateWrapper.cs" />
     <Compile Include="Validation\ServiceValidationDictionary.cs" />
   </ItemGroup>
   <ItemGroup>

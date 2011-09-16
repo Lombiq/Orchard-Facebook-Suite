@@ -22,3 +22,7 @@ else if (Model.IsConnected)
 {
     @Display(New.FacebookConnectAuthenticated(CurrentUser: Model.CurrentUser, ReturnUrl: returnUrl))
 }
+else
+{
+    @Html.ActionLink(T("Log off").ToString(), "LogOff", new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = Context.Request.RawUrl })
+}

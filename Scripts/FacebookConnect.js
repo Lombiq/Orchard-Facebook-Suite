@@ -20,7 +20,7 @@
                             window.location.href = returnUrl;
                         }
                     } else {
-                        alert('User cancelled login or did not fully authorize.');
+                        //alert('User cancelled login or did not fully authorize.');
                     }
                 }, { scope: scope });
             },
