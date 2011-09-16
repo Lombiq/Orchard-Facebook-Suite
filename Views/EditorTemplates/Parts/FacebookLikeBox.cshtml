@@ -1,0 +1,37 @@
+﻿@model Piedone.Facebook.Suite.Models.FacebookLikeBoxPart
+<fieldset>
+    <legend>@T("Facebook Comments Box Widget Settings")</legend>
+    <ol>
+        <li>
+            <label for="PageUrl">@T("Page url")</label>
+            @Html.TextBoxFor(model => model.PageUrl)
+            @Html.ValidationMessageFor(model => model.PageUrl)
+        </li>
+        <li>
+            @Display.WidthEditor(Value: Model.Width)
+        </li>
+        <li>
+            @Display.ColorSchemeSelector(Selected: Model.ColorScheme)
+        </li>
+        <li>
+            @Html.EditorFor(m => m.ShowFaces)
+            <label for="@Html.FieldIdFor(m => m.ShowFaces)" class="forcheckbox">@T("Show faces")</label>
+            @Html.ValidationMessageFor(m => m.ShowFaces)
+        </li>
+        <li>
+            <label for="BorderColor">@T("Border color")</label>
+            @Html.TextBoxFor(model => model.BorderColor)
+            @Html.ValidationMessageFor(model => model.BorderColor)
+        </li>
+        <li>
+            @Html.EditorFor(m => m.ShowStream)
+            <label for="@Html.FieldIdFor(m => m.ShowStream)" class="forcheckbox">@T("Show stream")</label>
+            @Html.ValidationMessageFor(m => m.ShowStream)
+        </li>
+        <li>
+            @Html.EditorFor(m => m.ShowHeader)
+            <label for="@Html.FieldIdFor(m => m.ShowHeader)" class="forcheckbox">@T("Show header")</label>
+            @Html.ValidationMessageFor(m => m.ShowHeader)
+        </li>
+    </ol>
+</fieldset>

@@ -28,6 +28,11 @@ Features:
 		Dependencies: Orchard.Widgets, Piedone.Facebook.Suite
 	Piedone.Facebook.Suite.Facepile:
 		Name: Facebook Facepile
-        Description: Adds the ability to add the Facebook Facepile button social plugin as a widget to zones or content types
+        Description: Adds the ability to add the Facebook Facepile social plugin as a widget to zones or content types
+		Category: Facebook Suite
+		Dependencies: Orchard.Widgets, Piedone.Facebook.Suite
+	Piedone.Facebook.Suite.LikeBox:
+		Name: Facebook Like Box
+        Description: Adds the ability to add the Facebook Like Box social plugin as a widget to zones or content types
 		Category: Facebook Suite
 		Dependencies: Orchard.Widgets, Piedone.Facebook.Suite

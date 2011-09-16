@@ -17,4 +17,8 @@
   <!--Facepile-->
   <Place Parts_FacebookFacepile_Edit="Content:7.5"/>
   <Place Parts_FacebookFacepile="Content:10.2"/>
+
+  <!--Like box-->
+  <Place Parts_FacebookLikeBox_Edit="Content:6"/>
+  <Place Parts_FacebookLikeBox="Content:9"/>
 </Placement>

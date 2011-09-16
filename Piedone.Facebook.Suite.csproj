@@ -91,13 +91,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ConnectController.cs" />
+    <Compile Include="Driver\FacebookLikeBoxDriver.cs" />
     <Compile Include="Driver\FacebookFacepileDriver.cs" />
     <Compile Include="Driver\FacebookLikeButtonDriver.cs" />
     <Compile Include="Filters\FacebookSuiteFilter.cs" />
+    <Compile Include="Handlers\FacebookLikeBoxHandler.cs" />
     <Compile Include="Handlers\FacebookFacepileHandler.cs" />
     <Compile Include="Handlers\FacebookLikeButtonHandler.cs" />
     <Compile Include="Helpers\FacebookConnectHelper.cs" />
     <Compile Include="Helpers\ValidationDictionaryTranscriber.cs" />
+    <Compile Include="Migrations\FacebookLikeBoxMigrations.cs" />
     <Compile Include="Migrations\FacebookFacepileMigrations.cs" />
     <Compile Include="Migrations\FacebookLikeButtonMigrations.cs" />
     <Compile Include="Migrations\FacebookCommentsBoxMigrations.cs" />
@@ -113,6 +116,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Helpers\FacebookUserDataMapper.cs" />
+    <Compile Include="Models\FacebookLikeBox.cs" />
     <Compile Include="Models\FacebookFacepile.cs" />
     <Compile Include="Models\FacebookLikeButton.cs" />
     <Compile Include="Models\FacebookCommentsBox.cs" />
@@ -148,6 +152,8 @@
     <Content Include="Views\Parts\FacebookFacepile.cshtml" />
     <Content Include="Views\FacebookConnectNotAuthenticated.cshtml" />
     <Content Include="Views\FacebookConnectAuthenticated.cshtml" />
+    <Content Include="Views\EditorTemplates\Parts\FacebookLikeBox.cshtml" />
+    <Content Include="Views\Parts\FacebookLikeBox.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\EditorTemplates\Parts.FacebookSuiteSettings.SiteSettings.cshtml" />
