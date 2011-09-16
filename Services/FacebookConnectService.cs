@@ -63,18 +63,10 @@ namespace Piedone.Facebook.Suite.Services
         }
 
         /// <inheritdoc/>
-        /// <summary>
-        /// Success is also if the user is only authenticated with Orchard.
-        /// </summary>
         /// <seealso cref="FacebookConnectService.IsAuthorized()"/>
         /// <exception cref="Orchard.OrchardException">Thrown if Facebook API calls fail.</exception>
         public bool Authorize(string[] permissions = null, bool onlyAllowVerified = false)
         {
-            var authenticatedUser = _authenticationService.GetAuthenticatedUser();
-
-            // User is already authenticated with Orchard, no need to authenticate with Facebook.
-            if (authenticatedUser != null) return true; 
-
             // User is not authenticated on Facebook or hasn't connected to our app or hasn't granted the needed permissions.
             if (!IsAuthorized(permissions))
             {
@@ -90,9 +82,10 @@ namespace Piedone.Facebook.Suite.Services
 
             var fbClient = new FacebookWebClient(_facebookSuiteService.FacebookWebContext);
 
-            Action<IUser> signIn =
+            Action<IUser> forceSignIn =
                 u =>
                 {
+                    _authenticationService.SignOut();
                     _authenticationService.SignIn(
                         u,
                         true);
@@ -103,7 +96,7 @@ namespace Piedone.Facebook.Suite.Services
             // We have previously saved the user's data
             if (fbUserPart != null)
             {
-                signIn(fbUserPart.As<Orchard.Users.Models.UserPart>().As<IUser>());
+                forceSignIn(fbUserPart.As<Orchard.Users.Models.UserPart>().As<IUser>());
                 fbClient.GetCompleted +=
                     (sender, e) =>
                     {
@@ -124,7 +117,7 @@ namespace Piedone.Facebook.Suite.Services
                             //{
                             //    var userPart = _contentManager.Get<Orchard.Users.Models.UserPart>(fbUserPart.UserId);
                             //    userPart.UserName = fbUserPart.Name;
-                            //    userPart.NormalizedUserName = fbUserPart.Name.ToLowerInvariant(); // This is taken from the implementation, but should reall be in a method of MembershipService 
+                            //    userPart.NormalizedUserName = fbUserPart.Name.ToLowerInvariant(); // This is taken from the implementation, but should really be in a method of MembershipService 
                             //}
                         }
                         else
@@ -157,7 +150,7 @@ namespace Piedone.Facebook.Suite.Services
                     // Does not need to verifiy user unicity as there can be more people with the same name.
                     // Or maybe it would be clever to get the email too, so users will be guaranteedly unique.
                     var random = new Random();
-                    authenticatedUser = _membershipService.CreateUser(
+                    var authenticatedUser = _membershipService.CreateUser(
                         new CreateUserParams(
                             dataMapper.Name,
                             random.Next().ToString(),
@@ -169,7 +162,7 @@ namespace Piedone.Facebook.Suite.Services
                     fbUserPart = authenticatedUser.As<FacebookUserPart>();
                     fbUserPart = FacebookUserDataMapper.MapToFacebookUserPart(dataMapper, fbUserPart);
 
-                    signIn(authenticatedUser);
+                    forceSignIn(authenticatedUser);
                 }
                 catch (Exception e)
                 {
