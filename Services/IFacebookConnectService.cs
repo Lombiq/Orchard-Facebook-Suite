@@ -6,7 +6,7 @@ using Orchard;
 using Orchard.Security;
 using Piedone.Facebook.Suite.Models;
 using Facebook.Web;
-using Piedone.Facebook.Suite.Validation;
+using Piedone.ServiceValidation.Dictionaries;
 
 namespace Piedone.Facebook.Suite.Services
 {
@@ -18,7 +18,7 @@ namespace Piedone.Facebook.Suite.Services
     /// </summary>
     public interface IFacebookConnectService : IDependency
     {
-        IValidationDictionary ValidationDictionary { get; }
+        IServiceValidationDictionary ValidationDictionary { get; }
         // Ehhez validatingservice abstract class és interface?
 
         /// <summary>

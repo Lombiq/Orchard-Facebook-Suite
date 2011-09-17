@@ -11,7 +11,7 @@ using Piedone.Facebook.Suite.Helpers;
 using Facebook;
 using Orchard.Logging;
 using Orchard.Localization;
-using Piedone.Facebook.Suite.Validation;
+using Piedone.ServiceValidation.Dictionaries;
 
 namespace Piedone.Facebook.Suite.Services
 {
@@ -23,7 +23,7 @@ namespace Piedone.Facebook.Suite.Services
         private readonly IContentManager _contentManager;
         private readonly IFacebookSuiteService _facebookSuiteService;
 
-        public IValidationDictionary ValidationDictionary { get; private set; }
+        public IServiceValidationDictionary ValidationDictionary { get; private set; }
         public ILogger Logger { get; set; }
         public Localizer T { get; set; }
 
@@ -41,7 +41,7 @@ namespace Piedone.Facebook.Suite.Services
             ValidationDictionary = validationDictionary;
             _facebookSuiteService = facebookSuiteService;
 
-            Logger = NullLogger.Instance; // Constructor injection fails
+            Logger = NullLogger.Instance; // Constructor injection of ILogger fails
             T = NullLocalizer.Instance;
         }
 

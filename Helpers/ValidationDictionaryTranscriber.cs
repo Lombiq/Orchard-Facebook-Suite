@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Orchard.ContentManagement;
-using Piedone.Facebook.Suite.Validation;
+using Piedone.ServiceValidation.Dictionaries;
 
 namespace Piedone.Facebook.Suite.Helpers
 {

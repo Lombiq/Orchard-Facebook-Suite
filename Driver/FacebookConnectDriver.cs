@@ -10,7 +10,6 @@ using Orchard.Environment.Extensions;
 using Piedone.Facebook.Suite.Services;
 using Piedone.Facebook.Suite.Helpers;
 using System.Dynamic;
-using Orchard.UI.Notify;
 using Orchard.Security;
 
 namespace Piedone.Facebook.Suite.Drivers
@@ -35,7 +34,6 @@ namespace Piedone.Facebook.Suite.Drivers
 
         protected override DriverResult Display(FacebookConnectPart part, string displayType, dynamic shapeHelper)
         {
-            // TODO: Ne jelenjen meg egyáltalán, ha auth, de nem connected
             bool isAuthenticated = _authenticationService.GetAuthenticatedUser() != null;
             var currentUserPart = _facebookConnectService.GetAuthenticatedFacebookUserPart();
             bool isConnected = currentUserPart != null;

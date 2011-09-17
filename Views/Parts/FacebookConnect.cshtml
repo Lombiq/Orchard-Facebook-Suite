@@ -24,5 +24,5 @@ else if (Model.IsConnected)
 }
 else
 {
-    @Html.ActionLink(T("Sign Out").ToString(), "LogOff", new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = Context.Request.RawUrl })
+    @Html.ActionLink(T("Sign out to log in with Facebook").ToString(), "LogOff", new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = Context.Request.RawUrl })
 }
