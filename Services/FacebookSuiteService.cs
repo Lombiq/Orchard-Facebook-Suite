@@ -63,7 +63,7 @@ namespace Piedone.Facebook.Suite.Services
         {
             get
             {
-                return FacebookSuiteSettingsPart.AppId != null;
+                return !String.IsNullOrEmpty(FacebookSuiteSettingsPart.AppId);
             }
         }
         
