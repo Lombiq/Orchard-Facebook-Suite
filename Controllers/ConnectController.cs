@@ -6,10 +6,12 @@ using System.Web.Mvc;
 using Orchard.Mvc.Extensions;
 using Piedone.Facebook.Suite.Services;
 using Piedone.Facebook.Suite.Helpers;
+using Orchard.Environment.Extensions;
 
 namespace Piedone.Facebook.Suite.Controllers
 {
     [HandleError]
+    [OrchardFeature("Piedone.Facebook.Suite.Connect")]
     public class ConnectController : Controller
     {
         private readonly IFacebookConnectService _facebookConnectService;

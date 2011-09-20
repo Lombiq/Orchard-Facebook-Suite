@@ -7,7 +7,6 @@ namespace Piedone.Facebook.Suite
 {
     public class Routes : IRouteProvider
     {
-
         public void GetRoutes(ICollection<RouteDescriptor> routes)
         {
             foreach (var routeDescriptor in GetRoutes())
@@ -18,26 +17,13 @@ namespace Piedone.Facebook.Suite
         {
             return new[] {
                 new RouteDescriptor {
-                    Route = new Route(
-                        "FBTest",
-                        new RouteValueDictionary {
-                                                    {"area", "Piedone.Facebook.Suite"},
-                                                    {"controller", "Test"},
-                                                    {"action", "Index"}
-                                                },
-                        new RouteValueDictionary(),
-                        new RouteValueDictionary {
-                                                    {"area", "Piedone.Facebook.Suite"}
-                                                },
-                        new MvcRouteHandler())
-                },
-                new RouteDescriptor {
+                    Name = "FacebookConnect",
                     Route = new Route(
                         "FacebookConnect",
                         new RouteValueDictionary {
                                                     {"area", "Piedone.Facebook.Suite"},
                                                     {"controller", "Connect"},
-                                                    {"action", "Index"}
+                                                    {"action", "Connect"}
                                                 },
                         new RouteValueDictionary(),
                         new RouteValueDictionary {

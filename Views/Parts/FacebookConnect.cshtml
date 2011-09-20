@@ -4,7 +4,7 @@
 
     if (!Model.IsAuthenticated)
     {
-        returnUrl = Url.Action("Connect", new { Controller = "Connect", Area = "Piedone.Facebook.Suite", Permissions = Model.Permissions, OnlyAllowVerified = Model.OnlyAllowVerified, ReturnUrl = returnUrl });
+        returnUrl = Url.RouteUrl("FacebookConnect", new { Permissions = Model.Permissions, OnlyAllowVerified = Model.OnlyAllowVerified, ReturnUrl = returnUrl });
     }
     else
     {
@@ -13,6 +13,7 @@
 }
 @{
     Script.Require("FacebookConnect").AtHead();
+    Style.Require("FacebookConnect");
 }
 @if (!Model.IsAuthenticated)
 {
@@ -24,5 +25,5 @@ else if (Model.IsConnected)
 }
 else
 {
-    @Html.ActionLink(T("Sign out to log in with Facebook").ToString(), "LogOff", new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = Context.Request.RawUrl })
+    @Html.ActionLink(T("Sign out to log in with Facebook").ToString(), "LogOff", new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = Context.Request.RawUrl }, new { id = "sign-out-to-connect-with-facebook-link" } )
 }
