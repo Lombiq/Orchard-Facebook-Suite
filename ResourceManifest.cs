@@ -8,8 +8,7 @@ namespace Piedone.Facebook.Suite {
             var manifest = builder.Add();
             manifest.DefineScript("FacebookSuite").SetUrl("FacebookSuite.js").SetDependencies("jQuery");
             manifest.DefineScript("FacebookConnect").SetUrl("FacebookConnect.js");
-
-            //manifest.DefineStyle("jQueryUI_Orchard").SetUrl("jquery-ui-1.8.11.custom.css").SetVersion("1.8.11");
+            manifest.DefineStyle("FacebookConnect").SetUrl("FacebookConnect.css");
         }
     }
 }
