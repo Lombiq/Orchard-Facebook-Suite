@@ -21,9 +21,9 @@ namespace Piedone.Facebook.Suite.Controllers
             _facebookConnectService = facebookConnectService;
         }
 
-        //
-        // GET: /Connect/
-
+        /// <summary>
+        /// Used when connecting through button click (not autologin)
+        /// </summary>
         public ActionResult Connect(string permissions = "", bool onlyAllowVerified = false, string returnUrl = "")
         {
             _facebookConnectService.Authorize(
