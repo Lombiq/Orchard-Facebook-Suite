@@ -11,6 +11,8 @@ using Piedone.Facebook.Suite.Services;
 using Piedone.Facebook.Suite.Helpers;
 using System.Dynamic;
 using Orchard.Security;
+using Orchard.UI.Notify;
+using Orchard.Localization;
 
 namespace Piedone.Facebook.Suite.Drivers
 {
@@ -20,16 +22,22 @@ namespace Piedone.Facebook.Suite.Drivers
         private readonly IAuthenticationService _authenticationService;
         private readonly IFacebookConnectService _facebookConnectService;
         private readonly IFacebookSuiteService _facebookSuiteService;
+        private readonly INotifier _notifier;
+
+        public Localizer T { get; set; }
 
         public FacebookConnectsDriver(
             IAuthenticationService authenticationService,
             IFacebookConnectService facebookConnectService,
-            IFacebookSuiteService facebookSuiteService
+            IFacebookSuiteService facebookSuiteService,
+            INotifier notifier
             )
         {
             _authenticationService = authenticationService;
             _facebookConnectService = facebookConnectService;
             _facebookSuiteService = facebookSuiteService;
+            _notifier = notifier;
+            T = NullLocalizer.Instance;
         }
 
         protected override DriverResult Display(FacebookConnectPart part, string displayType, dynamic shapeHelper)
@@ -77,6 +85,11 @@ namespace Piedone.Facebook.Suite.Drivers
         // GET
         protected override DriverResult Editor(FacebookConnectPart part, dynamic shapeHelper)
         {
+            if (!_facebookSuiteService.AppSettingsSet)
+            {
+                _notifier.Add(NotifyType.Error, T("Currently the Facebook app settings are not set, therefore Facebook Connect won't work properly. Please set the app settings first on the page Facebook Suite Settings under Settings."));
+            }
+
             return ContentShape("Parts_FacebookConnect_Edit",
                 () => shapeHelper.EditorTemplate(
                     TemplateName: "Parts/FacebookConnect",
