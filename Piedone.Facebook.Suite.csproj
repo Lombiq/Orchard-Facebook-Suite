@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Styles\FacebookConnect.css</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Facebook, Version=5.2.1.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -73,6 +76,7 @@
   <ItemGroup>
     <Content Include="Scripts\FacebookConnect.js" />
     <Content Include="Scripts\FacebookSuite.js" />
+    <Content Include="Styles\FacebookConnect.css" />
     <Content Include="Views\Web.config" />
     <Content Include="Scripts\Web.config" />
     <Content Include="Styles\Web.config" />
