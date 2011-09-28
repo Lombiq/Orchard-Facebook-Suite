@@ -11,7 +11,7 @@ using Orchard.Environment.Extensions;
 namespace Piedone.Facebook.Suite.Drivers
 {
     [OrchardFeature("Piedone.Facebook.Suite.CommentsBox")]
-    public class FacebookCommentsBoxDriver : ContentPartDriver<FacebookCommentsBoxPart>
+    public class FacebookCommentsBoxPartDriver : ContentPartDriver<FacebookCommentsBoxPart>
     {
         protected override DriverResult Display(FacebookCommentsBoxPart part, string displayType, dynamic shapeHelper)
         {

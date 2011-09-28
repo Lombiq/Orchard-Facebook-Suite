@@ -11,7 +11,7 @@ using Orchard.Environment.Extensions;
 namespace Piedone.Facebook.Suite.Drivers
 {
     [OrchardFeature("Piedone.Facebook.Suite.Facepile")]
-    public class FacebookFacepileDriver : ContentPartDriver<FacebookFacepilePart>
+    public class FacebookFacepilePartDriver : ContentPartDriver<FacebookFacepilePart>
     {
         protected override DriverResult Display(FacebookFacepilePart part, string displayType, dynamic shapeHelper)
         {

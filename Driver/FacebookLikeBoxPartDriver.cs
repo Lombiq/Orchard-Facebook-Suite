@@ -11,7 +11,7 @@ using Orchard.Environment.Extensions;
 namespace Piedone.Facebook.Suite.Drivers
 {
     [OrchardFeature("Piedone.Facebook.Suite.LikeBox")]
-    public class FacebookLikeBoxDriver : ContentPartDriver<FacebookLikeBoxPart>
+    public class FacebookLikeBoxPartDriver : ContentPartDriver<FacebookLikeBoxPart>
     {
         protected override DriverResult Display(FacebookLikeBoxPart part, string displayType, dynamic shapeHelper)
         {

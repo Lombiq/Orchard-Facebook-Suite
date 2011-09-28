@@ -10,7 +10,7 @@ using Orchard.Localization;
 
 namespace Piedone.Facebook.Suite.Drivers
 {
-    public class FacebookSuiteSettingsDriver : ContentPartDriver<FacebookSuiteSettingsPart>
+    public class FacebookSuiteSettingsPartDriver : ContentPartDriver<FacebookSuiteSettingsPart>
     {
         protected override string Prefix { get { return "FacebookSuiteSettings"; } }
 

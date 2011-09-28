@@ -95,9 +95,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ConnectController.cs" />
-    <Compile Include="Driver\FacebookLikeBoxDriver.cs" />
-    <Compile Include="Driver\FacebookFacepileDriver.cs" />
-    <Compile Include="Driver\FacebookLikeButtonDriver.cs" />
+    <Compile Include="Driver\FacebookLikeBoxPartDriver.cs" />
+    <Compile Include="Driver\FacebookFacepilePartDriver.cs" />
+    <Compile Include="Driver\FacebookLikeButtonPartDriver.cs" />
     <Compile Include="Filters\FacebookSuiteFilter.cs" />
     <Compile Include="Handlers\FacebookLikeBoxHandler.cs" />
     <Compile Include="Handlers\FacebookFacepileHandler.cs" />
@@ -107,10 +107,10 @@
     <Compile Include="Migrations\FacebookFacepileMigrations.cs" />
     <Compile Include="Migrations\FacebookLikeButtonMigrations.cs" />
     <Compile Include="Migrations\FacebookCommentsBoxMigrations.cs" />
-    <Compile Include="Driver\FacebookCommentsBoxDriver.cs" />
+    <Compile Include="Driver\FacebookCommentsBoxPartDriver.cs" />
     <Compile Include="Migrations\FacebookConnectMigrations.cs" />
-    <Compile Include="Driver\FacebookConnectDriver.cs" />
-    <Compile Include="Driver\FacebookSuiteSettingsDriver.cs" />
+    <Compile Include="Driver\FacebookConnectPartDriver.cs" />
+    <Compile Include="Driver\FacebookSuiteSettingsPartDriver.cs" />
     <Compile Include="Handlers\FacebookUserHandler.cs" />
     <Compile Include="Handlers\FacebookCommentsBoxHandler.cs" />
     <Compile Include="Handlers\FacebookConnectHandler.cs" />

@@ -17,7 +17,7 @@ using Orchard.Localization;
 namespace Piedone.Facebook.Suite.Drivers
 {
     [OrchardFeature("Piedone.Facebook.Suite.Connect")]
-    public class FacebookConnectsDriver : ContentPartDriver<FacebookConnectPart>
+    public class FacebookConnectPartDriver : ContentPartDriver<FacebookConnectPart>
     {
         private readonly IAuthenticationService _authenticationService;
         private readonly IFacebookConnectService _facebookConnectService;
@@ -26,7 +26,7 @@ namespace Piedone.Facebook.Suite.Drivers
 
         public Localizer T { get; set; }
 
-        public FacebookConnectsDriver(
+        public FacebookConnectPartDriver(
             IAuthenticationService authenticationService,
             IFacebookConnectService facebookConnectService,
             IFacebookSuiteService facebookSuiteService,
