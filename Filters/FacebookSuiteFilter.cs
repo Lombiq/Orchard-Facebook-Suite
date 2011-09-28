@@ -57,15 +57,6 @@ namespace Piedone.Facebook.Suite.Filters
                     Culture: _orchardServices.WorkContext.CurrentSite.SiteCulture
                     )
                 );
-
-            
-            //_workContextAccessor.GetContext(filterContext).Layout.Zones["AsideFirst"].Add(
-            //    _shapeFactory.FacebookInit(
-            //        AppId: settings.AppId,
-            //        Session: (_facebookSuiteService.FacebookWebContext.Session != null) ? _facebookSuiteService.FacebookWebContext.Session.Data : "",
-            //        Culture: _orchardServices.WorkContext.CurrentSite.SiteCulture
-            //        )
-            //    );
         }
 
         public void OnResultExecuted(ResultExecutedContext filterContext)

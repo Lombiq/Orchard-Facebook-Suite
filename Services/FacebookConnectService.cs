@@ -182,6 +182,7 @@ namespace Piedone.Facebook.Suite.Services
         /// <inheritdoc/>
         public FacebookUserPart GetFacebookUserPart(int id)
         {
+            // TODO: this is maybe not true
             // This way if no entry was found, null will be returned. This is preferred.
             // _contentManager.Get<FacebookUserPart>(id); would return an empty object.
             return _contentManager
