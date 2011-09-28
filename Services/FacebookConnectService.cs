@@ -142,10 +142,6 @@ namespace Piedone.Facebook.Suite.Services
                         ValidationDictionary.AddError("notVerified", T("User is not verified."));
                         return false;
                     }
-                    //fbUserPart = mapFBApiResultFieldsToFacebookUserPartFields(
-                    //    me, 
-                    //    _contentManager.New<FacebookUserPart>("FacebookUser"));
-                    //_contentManager.Create(fbUserPart);
 
                     // Does not need to verifiy user unicity as there can be more people with the same name.
                     // Or maybe it would be clever to get the email too, so users will be guaranteedly unique.

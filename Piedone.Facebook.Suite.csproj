@@ -103,7 +103,6 @@
     <Compile Include="Handlers\FacebookFacepileHandler.cs" />
     <Compile Include="Handlers\FacebookLikeButtonHandler.cs" />
     <Compile Include="Helpers\FacebookConnectHelper.cs" />
-    <Compile Include="Helpers\ValidationDictionaryTranscriber.cs" />
     <Compile Include="Migrations\FacebookLikeBoxMigrations.cs" />
     <Compile Include="Migrations\FacebookFacepileMigrations.cs" />
     <Compile Include="Migrations\FacebookLikeButtonMigrations.cs" />
