@@ -19,7 +19,6 @@ namespace Piedone.Facebook.Suite.Services
     public interface IFacebookConnectService : IDependency
     {
         IServiceValidationDictionary ValidationDictionary { get; }
-        // Ehhez validatingservice abstract class és interface?
 
         /// <summary>
         /// Checks if the user is connected to our Facebook app and is authenticated on Facebook
