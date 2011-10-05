@@ -48,5 +48,15 @@ namespace Piedone.Facebook.Suite.Migrations
 
             return 1;
         }
+
+        public int UpdateFrom1()
+        {
+            SchemaBuilder.AlterTable("FacebookUserPartRecord",
+                table => table
+                    .CreateIndex("FacebookUser", new string[] { "FacebookUserId" })
+                );
+
+            return 2;
+        }
     }
 }
