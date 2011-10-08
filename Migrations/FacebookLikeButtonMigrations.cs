@@ -19,13 +19,13 @@ namespace Piedone.Facebook.Suite.Migrations
             // Creating table FacebookLikeButtonPartRecord
             SchemaBuilder.CreateTable("FacebookLikeButtonPartRecord", table => table
                 .ContentPartRecord()
-                .Column("EnableSendButton", DbType.Boolean)
-                .Column("LayoutStyle", DbType.String)
-                .Column("Width", DbType.Int32)
-                .Column("ShowFaces", DbType.Boolean)
-                .Column("VerbToDisplay", DbType.String)
-                .Column("ColorScheme", DbType.String)
-                .Column("Font", DbType.String)
+                .Column<bool>("EnableSendButton")
+                .Column<string>("LayoutStyle")
+                .Column<int>("Width")
+                .Column<bool>("ShowFaces")
+                .Column<string>("VerbToDisplay")
+                .Column<string>("ColorScheme")
+                .Column<string>("Font")
             );
 
 

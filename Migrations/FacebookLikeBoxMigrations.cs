@@ -19,13 +19,13 @@ namespace Piedone.Facebook.Suite.Migrations
             // Creating table FacebookLikeBoxPartRecord
             SchemaBuilder.CreateTable("FacebookLikeBoxPartRecord", table => table
                 .ContentPartRecord()
-                .Column("PageUrl", DbType.String)
-                .Column("Width", DbType.Int32)
-                .Column("ColorScheme", DbType.String)
-                .Column("ShowFaces", DbType.Boolean)
-                .Column("BorderColor", DbType.String)
-                .Column("ShowStream", DbType.Boolean)
-                .Column("ShowHeader", DbType.Boolean)
+                .Column<string>("PageUrl")
+                .Column<int>("Width")
+                .Column<string>("ColorScheme")
+                .Column<bool>("ShowFaces")
+                .Column<string>("BorderColor")
+                .Column<bool>("ShowStream")
+                .Column<bool>("ShowHeader")
             );
 
             ContentDefinitionManager.AlterPartDefinition(typeof(FacebookLikeBoxPart).Name,

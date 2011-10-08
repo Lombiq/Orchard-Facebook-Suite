@@ -18,9 +18,9 @@ namespace Piedone.Facebook.Suite.Migrations
 			// Creating table FacebookConnectPartRecord
 			SchemaBuilder.CreateTable("FacebookConnectPartRecord", table => table
 				.ContentPartRecord()
-				.Column("Permissions", DbType.String)
-                .Column("AutoLogin", DbType.Boolean)
-                .Column("OnlyAllowVerified", DbType.Boolean)
+				.Column<string>("Permissions")
+                .Column<bool>("AutoLogin")
+                .Column<bool>("OnlyAllowVerified")
 			);
 
             ContentDefinitionManager.AlterTypeDefinition("FacebookConnectWidget", cfg => cfg
@@ -32,17 +32,16 @@ namespace Piedone.Facebook.Suite.Migrations
             // Creating table FacebookUserPartRecord
             SchemaBuilder.CreateTable("FacebookUserPartRecord", table => table
                 .ContentPartRecord()
-                //.Column("UserId", DbType.Int32)
-                .Column("FacebookUserId", DbType.Int64)
-                .Column("Name", DbType.String)
-                .Column("FirstName", DbType.String)
-                .Column("LastName", DbType.String)
-                .Column("Link", DbType.String)
-                .Column("FacebookUserName", DbType.String)
-                .Column("Gender", DbType.String)
-                .Column("TimeZone", DbType.Int32)
-                .Column("Locale", DbType.String)
-                .Column("IsVerified", DbType.Boolean)
+                .Column<long>("FacebookUserId")
+                .Column<string>("Name")
+                .Column<string>("FirstName")
+                .Column<string>("LastName")
+                .Column<string>("Link")
+                .Column<string>("FacebookUserName")
+                .Column<string>("Gender")
+                .Column<int>("TimeZone")
+                .Column<int>("Locale")
+                .Column<bool>("IsVerified")
             );
 
 

@@ -17,14 +17,14 @@ namespace Piedone.Facebook.Suite.Migrations
 			// Creating table FacebookSuiteSettingsPartRecord
 			SchemaBuilder.CreateTable("FacebookSuiteSettingsPartRecord", table => table
 				.ContentPartRecord()
-				.Column("AppId", DbType.String)
-				.Column("AppSecret", DbType.String)
-				.Column("CancelUrlPath", DbType.String)
-				.Column("CanvasPage", DbType.String)
-				.Column("CanvasUrl", DbType.String)
-				.Column("SecureCanvasUrl", DbType.String)
-				.Column("SiteUrl", DbType.String)
-				.Column("UseFacebookBeta", DbType.Boolean)
+                .Column<string>("AppId")
+                .Column<string>("AppSecret")
+                .Column<string>("CancelUrlPath")
+                .Column<string>("CanvasPage")
+                .Column<string>("CanvasUrl")
+                .Column<string>("SecureCanvasUrl")
+                .Column<string>("SiteUrl")
+				.Column<bool>("UseFacebookBeta")
 			);
 
 

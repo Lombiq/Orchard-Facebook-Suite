@@ -19,10 +19,10 @@ namespace Piedone.Facebook.Suite.Migrations
             // Creating table FacebookFacepilePartRecord
             SchemaBuilder.CreateTable("FacebookFacepilePartRecord", table => table
                 .ContentPartRecord()
-                .Column("Width", DbType.Int32)
-                .Column("ColorScheme", DbType.String)
-                .Column("MaxRows", DbType.Int32)
-                .Column("Size", DbType.String)
+                .Column<int>("Width")
+                .Column<string>("ColorScheme")
+                .Column<int>("MaxRows")
+                .Column<string>("Size")
 
             );
 

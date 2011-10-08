@@ -19,9 +19,9 @@ namespace Piedone.Facebook.Suite.Migrations
             // Creating table FacebookCommentsBoxPartRecord
             SchemaBuilder.CreateTable("FacebookCommentsBoxPartRecord", table => table
                 .ContentPartRecord()
-                .Column("NumberOfPosts", DbType.Int32)
-                .Column("Width", DbType.Int32)
-                .Column("ColorScheme", DbType.String)
+                .Column<int>("NumberOfPosts")
+                .Column<int>("Width")
+                .Column<string>("ColorScheme")
             );
 
             ContentDefinitionManager.AlterPartDefinition(typeof(FacebookCommentsBoxPart).Name,
