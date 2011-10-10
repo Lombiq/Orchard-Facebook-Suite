@@ -127,7 +127,6 @@
     <Compile Include="Models\FacebookConnect.cs" />
     <Compile Include="Models\FacebookAppSettings.cs" />
     <Compile Include="Models\SocialPlugin.cs" />
-    <Compile Include="Permissions.cs" />
     <Compile Include="ResourceManifest.cs" />
     <Compile Include="Routes.cs" />
     <Compile Include="Services\FacebookConnectService.cs" />
