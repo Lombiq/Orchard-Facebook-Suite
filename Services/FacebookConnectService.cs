@@ -185,7 +185,7 @@ namespace Piedone.Facebook.Suite.Services
             return _contentManager.Get<FacebookUserPart>(id);
         }
 
-
+        /// <inheritdoc/>
         public FacebookUserPart GetAuthenticatedFacebookUserPart()
         {
             var authenticatedUser = _authenticationService.GetAuthenticatedUser();
