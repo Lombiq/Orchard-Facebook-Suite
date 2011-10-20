@@ -12,9 +12,11 @@ using Facebook;
 using Orchard.Logging;
 using Orchard.Localization;
 using Piedone.ServiceValidation.Dictionaries;
+using Orchard.Environment.Extensions;
 
 namespace Piedone.Facebook.Suite.Services
 {
+    [OrchardFeature("Piedone.Facebook.Suite.Connect")]
     public class FacebookConnectService : IFacebookConnectService
     {
         private readonly IAuthenticationService _authenticationService;

@@ -8,9 +8,11 @@ using Piedone.Facebook.Suite.Models;
 using Facebook.Web;
 using Orchard.Mvc;
 using Facebook;
+using Orchard.Environment.Extensions;
 
 namespace Piedone.Facebook.Suite.Services
 {
+    [OrchardFeature("Piedone.Facebook.Suite")]
     public class FacebookSuiteService : IFacebookSuiteService
     {
         private readonly IOrchardServices _orchardServices;
