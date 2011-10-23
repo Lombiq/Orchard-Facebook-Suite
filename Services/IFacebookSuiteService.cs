@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Facebook.Web;
 using Orchard;
 using Piedone.Facebook.Suite.Models;
-using Facebook.Web;
 
 namespace Piedone.Facebook.Suite.Services
 {

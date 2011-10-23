@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using Orchard.Mvc.Extensions;
-using Piedone.Facebook.Suite.Services;
-using Piedone.Facebook.Suite.Helpers;
+﻿using System.Web.Mvc;
 using Orchard.Environment.Extensions;
+using Orchard.Mvc.Extensions;
+using Piedone.Facebook.Suite.Helpers;
+using Piedone.Facebook.Suite.Services;
 
 namespace Piedone.Facebook.Suite.Controllers
 {

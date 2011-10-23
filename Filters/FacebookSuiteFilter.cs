@@ -1,12 +1,9 @@
-﻿using System.Text;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Orchard;
-using Orchard.ContentManagement;
+using Orchard.DisplayManagement;
 using Orchard.Environment.Extensions;
-using Orchard.Mvc;
 using Orchard.Mvc.Filters;
 using Orchard.UI.Resources;
-using Orchard.DisplayManagement;
 using Piedone.Facebook.Suite.Services;
 
 namespace Piedone.Facebook.Suite.Filters

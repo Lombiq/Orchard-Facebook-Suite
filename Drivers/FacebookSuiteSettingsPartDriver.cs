@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Orchard.ContentManagement;
+﻿using Orchard.ContentManagement;
 using Orchard.ContentManagement.Drivers;
-using Orchard;
 using Piedone.Facebook.Suite.Models;
-using Orchard.Localization;
 
 namespace Piedone.Facebook.Suite.Drivers
 {

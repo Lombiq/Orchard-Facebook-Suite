@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using Facebook.Web;
 using Orchard;
 using Orchard.ContentManagement; // For generic ContentManager methods
-using Piedone.Facebook.Suite.Models;
-using Facebook.Web;
-using Orchard.Mvc;
-using Facebook;
 using Orchard.Environment.Extensions;
+using Orchard.Mvc;
+using Piedone.Facebook.Suite.Models;
 
 namespace Piedone.Facebook.Suite.Services
 {

@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Orchard;
-using Orchard.Security;
+﻿using Orchard;
 using Piedone.Facebook.Suite.Models;
-using Facebook.Web;
 using Piedone.ServiceValidation.Dictionaries;
 
 namespace Piedone.Facebook.Suite.Services

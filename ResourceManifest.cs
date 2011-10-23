@@ -1,5 +1,5 @@
-using Orchard.UI.Resources;
 using Orchard.Environment.Extensions;
+using Orchard.UI.Resources;
 
 namespace Piedone.Facebook.Suite {
     [OrchardFeature("Piedone.Facebook.Suite")]

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.ComponentModel.DataAnnotations;
-using Orchard.ContentManagement;
-using Orchard.ContentManagement.Records;
+﻿using System.ComponentModel.DataAnnotations;
 using Orchard.Environment.Extensions;
 
 namespace Piedone.Facebook.Suite.Models
