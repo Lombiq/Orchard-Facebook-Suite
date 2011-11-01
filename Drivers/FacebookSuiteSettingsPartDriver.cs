@@ -6,7 +6,10 @@ namespace Piedone.Facebook.Suite.Drivers
 {
     public class FacebookSuiteSettingsPartDriver : ContentPartDriver<FacebookSuiteSettingsPart>
     {
-        protected override string Prefix { get { return "FacebookSuiteSettings"; } }
+        protected override string Prefix
+        {
+            get { return "FacebookSuite"; }
+        }
 
         // GET
         protected override DriverResult Editor(FacebookSuiteSettingsPart part, dynamic shapeHelper)

@@ -21,6 +21,11 @@ namespace Piedone.Facebook.Suite.Drivers
 
         public Localizer T { get; set; }
 
+        protected override string Prefix
+        {
+            get { return "Connect"; }
+        }
+
         public FacebookConnectPartDriver(
             IAuthenticationService authenticationService,
             IFacebookConnectService facebookConnectService,

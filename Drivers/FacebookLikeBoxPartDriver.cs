@@ -8,6 +8,11 @@ namespace Piedone.Facebook.Suite.Drivers
     [OrchardFeature("Piedone.Facebook.Suite.LikeBox")]
     public class FacebookLikeBoxPartDriver : ContentPartDriver<FacebookLikeBoxPart>
     {
+        protected override string Prefix
+        {
+            get { return "LikeBox"; }
+        }
+
         protected override DriverResult Display(FacebookLikeBoxPart part, string displayType, dynamic shapeHelper)
         {
             return ContentShape("Parts_FacebookLikeBox",

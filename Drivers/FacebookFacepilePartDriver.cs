@@ -8,6 +8,11 @@ namespace Piedone.Facebook.Suite.Drivers
     [OrchardFeature("Piedone.Facebook.Suite.Facepile")]
     public class FacebookFacepilePartDriver : ContentPartDriver<FacebookFacepilePart>
     {
+        protected override string Prefix
+        {
+            get { return "Facepile"; }
+        }
+
         protected override DriverResult Display(FacebookFacepilePart part, string displayType, dynamic shapeHelper)
         {
             return ContentShape("Parts_FacebookFacepile",

@@ -8,6 +8,11 @@ namespace Piedone.Facebook.Suite.Drivers
     [OrchardFeature("Piedone.Facebook.Suite.CommentsBox")]
     public class FacebookCommentsBoxPartDriver : ContentPartDriver<FacebookCommentsBoxPart>
     {
+        protected override string Prefix
+        {
+            get { return "CommentsBox"; }
+        }
+
         protected override DriverResult Display(FacebookCommentsBoxPart part, string displayType, dynamic shapeHelper)
         {
             return ContentShape("Parts_FacebookCommentsBox",
