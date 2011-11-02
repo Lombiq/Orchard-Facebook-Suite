@@ -24,7 +24,7 @@ namespace Piedone.Facebook.Suite.Helpers
                 FacebookUserName = apiResult.username;
                 Gender = apiResult.gender;
                 TimeZone = (int)apiResult.timezone;
-                Locale = apiResult.locale;
+                Locale = ((string)apiResult.locale).Replace('_', '-'); // Making locale Orchard-compatible
                 IsVerified = (apiResult.verified != null) ? apiResult.verified : false; // Maybe it is possible that verified is set, but is false -> don't take automatically as true if it's set
             }
         }

@@ -50,5 +50,15 @@ namespace Piedone.Facebook.Suite.Migrations
 
             return 2;
         }
+
+        public int UpdateFrom2()
+        {
+            SchemaBuilder.AlterTable("FacebookUserPartRecord",
+                table => table
+                    .AlterColumn("Locale", column => column.WithType(System.Data.DbType.String))
+                );
+
+            return 3;
+        }
     }
 }
