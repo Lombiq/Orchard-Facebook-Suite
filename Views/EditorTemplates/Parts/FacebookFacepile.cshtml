@@ -9,12 +9,12 @@
             @Display.ColorSchemeSelector(Selected: Model.ColorScheme)
         </li>
         <li>
-            <label for="MaxRows">@T("Max rows")</label>
-            @Html.TextBoxFor(model => model.MaxRows)
+            @Html.LabelFor(model => model.MaxRows, T("Max rows"))
+            @Html.TextBoxFor(model => model.MaxRows, new { @class = "text text-small" })
             @Html.ValidationMessageFor(model => model.MaxRows)
         </li>
         <li>
-            <label for="Size">@T("Size")</label>
+            @Html.LabelFor(model => model.Size, T("Size"))
             @Html.DropDownListFor(model => model.Size, new SelectList(new[] { new SelectListItem { Text = "small", Value = "small" }, new SelectListItem { Text = "large", Value = "large" } }, "Text", "Value"))
             @Html.ValidationMessageFor(model => model.Size)
         </li>

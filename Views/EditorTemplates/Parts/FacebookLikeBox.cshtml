@@ -3,8 +3,8 @@
     <legend>@T("Facebook Like Box Widget Settings")</legend>
     <ol>
         <li>
-            <label for="PageUrl">@T("Page url")</label>
-            @Html.TextBoxFor(model => model.PageUrl)
+            @Html.LabelFor(model => model.PageUrl, T("Page url"))
+            @Html.TextBoxFor(model => model.PageUrl, new { @class = "text singleline" })
             @Html.ValidationMessageFor(model => model.PageUrl)
         </li>
         <li>
@@ -19,8 +19,8 @@
             @Html.ValidationMessageFor(m => m.ShowFaces)
         </li>
         <li>
-            <label for="BorderColor">@T("Border color")</label>
-            @Html.TextBoxFor(model => model.BorderColor)
+            @Html.LabelFor(model => model.BorderColor, T("Border color"))
+            @Html.TextBoxFor(model => model.BorderColor, new { @class = "text singleline" })
             @Html.ValidationMessageFor(model => model.BorderColor)
         </li>
         <li>

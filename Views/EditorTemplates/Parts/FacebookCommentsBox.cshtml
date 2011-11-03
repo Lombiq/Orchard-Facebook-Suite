@@ -1,9 +1,9 @@
 ﻿@model Piedone.Facebook.Suite.Models.FacebookCommentsBoxPart
-<fieldset>
+<fieldset>@Model.PartDefinition.
     <legend>@T("Facebook Comments Box Widget Settings")</legend>
     <ol>
         <li>
-            <label for="NumberOfPosts">@T("Number of posts")</label>
+            @Html.LabelFor(model => model.NumberOfPosts, T("Number of posts"))
             @Html.TextBoxFor(model => model.NumberOfPosts)
             @Html.ValidationMessageFor(model => model.NumberOfPosts)
         </li>

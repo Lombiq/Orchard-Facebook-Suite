@@ -4,8 +4,8 @@
     <span class="hint">@T("For the best experience, place this widget in a layer that both authenticated and anonymous users can see.")</span>
     <ol>
         <li>
-            <label for="Permissions">@T("Permissions")</label>
-            @Html.TextBoxFor(model => model.Permissions)
+            @Html.LabelFor(model => model.Permissions, T("Permissions"))
+            @Html.TextBoxFor(model => model.Permissions, new { @class = "text singleline" })
             @Html.ValidationMessageFor(model => model.Permissions)
             <span class="hint">@T("If extended permissions are needed, enter a list of permission, separated by commas.")</span>
         </li>
