@@ -46,8 +46,8 @@ namespace Piedone.Facebook.Suite.Drivers
                 () =>
                 {
                     bool isAuthenticated = _authenticationService.GetAuthenticatedUser() != null;
-                    var currentUserPart = _facebookConnectService.GetAuthenticatedFacebookUserPart();
-                    bool isConnected = currentUserPart != null;
+                    var currentFacebookUserPart = _facebookConnectService.GetAuthenticatedFacebookUserPart();
+                    bool isConnected = currentFacebookUserPart != null;
 
                     dynamic CurrentUser = new ExpandoObject();
 
@@ -63,16 +63,16 @@ namespace Piedone.Facebook.Suite.Drivers
                             // string loginUrl = "https://www.facebook.com/dialog/oauth?client_id=" +  _facebookSuiteService.FacebookSuiteSettingsPart.AppId + "&redirect_uri=YOUR_URL&scope=email,read_stream";
                             if (isConnected)
                             {
-                                currentUserPart = _facebookConnectService.GetAuthenticatedFacebookUserPart();
+                                currentFacebookUserPart = _facebookConnectService.GetAuthenticatedFacebookUserPart();
                             }
                         }
                     }
 
                     if (isConnected)
                     {
-                        CurrentUser.Name = currentUserPart.Name;
-                        CurrentUser.PictureLink = currentUserPart.PictureLink;
-                        CurrentUser.Link = currentUserPart.Link;
+                        CurrentUser.Name = currentFacebookUserPart.Name;
+                        CurrentUser.PictureLink = currentFacebookUserPart.PictureLink;
+                        CurrentUser.Link = currentFacebookUserPart.Link;
                     }
 
                     return shapeHelper.Parts_FacebookConnect(
