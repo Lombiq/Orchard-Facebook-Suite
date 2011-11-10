@@ -12,7 +12,7 @@ namespace Piedone.Facebook.Suite.Migrations
         public int Create()
         {
             // Creating table FacebookLikeBoxPartRecord
-            SchemaBuilder.CreateTable("FacebookLikeBoxPartRecord", table => table
+            SchemaBuilder.CreateTable(typeof(FacebookLikeBoxPartRecord).Name, table => table
                 .ContentPartRecord()
                 .Column<string>("PageUrl")
                 .Column<int>("Width")

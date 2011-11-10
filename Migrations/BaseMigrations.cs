@@ -1,5 +1,6 @@
 using Orchard.Data.Migration;
 using Orchard.Environment.Extensions;
+using Piedone.Facebook.Suite.Models;
 
 namespace Piedone.Facebook.Suite.Migrations
 {
@@ -8,7 +9,7 @@ namespace Piedone.Facebook.Suite.Migrations
 
         public int Create() {
 			// Creating table FacebookSuiteSettingsPartRecord
-			SchemaBuilder.CreateTable("FacebookSuiteSettingsPartRecord", table => table
+			SchemaBuilder.CreateTable(typeof(FacebookSuiteSettingsPartRecord).Name, table => table
 				.ContentPartRecord()
                 .Column<string>("AppId")
                 .Column<string>("AppSecret")

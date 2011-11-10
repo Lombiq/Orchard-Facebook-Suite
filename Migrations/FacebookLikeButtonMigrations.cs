@@ -12,7 +12,7 @@ namespace Piedone.Facebook.Suite.Migrations
         public int Create()
         {
             // Creating table FacebookLikeButtonPartRecord
-            SchemaBuilder.CreateTable("FacebookLikeButtonPartRecord", table => table
+            SchemaBuilder.CreateTable(typeof(FacebookLikeButtonPartRecord).Name, table => table
                 .ContentPartRecord()
                 .Column<bool>("EnableSendButton")
                 .Column<string>("LayoutStyle")

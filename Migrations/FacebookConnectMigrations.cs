@@ -1,6 +1,7 @@
 using Orchard.ContentManagement.MetaData;
 using Orchard.Data.Migration;
 using Orchard.Environment.Extensions;
+using Piedone.Facebook.Suite.Models;
 
 namespace Piedone.Facebook.Suite.Migrations
 {
@@ -9,7 +10,7 @@ namespace Piedone.Facebook.Suite.Migrations
 
         public int Create() {
 			// Creating table FacebookConnectPartRecord
-			SchemaBuilder.CreateTable("FacebookConnectPartRecord", table => table
+			SchemaBuilder.CreateTable(typeof(FacebookConnectPartRecord).Name, table => table
 				.ContentPartRecord()
 				.Column<string>("Permissions")
                 .Column<bool>("AutoLogin")
@@ -23,7 +24,7 @@ namespace Piedone.Facebook.Suite.Migrations
                 .WithSetting("Stereotype", "Widget"));
 
             // Creating table FacebookUserPartRecord
-            SchemaBuilder.CreateTable("FacebookUserPartRecord", table => table
+            SchemaBuilder.CreateTable(typeof(FacebookUserPartRecord).Name, table => table
                 .ContentPartRecord()
                 .Column<long>("FacebookUserId")
                 .Column<string>("Name")
@@ -43,7 +44,7 @@ namespace Piedone.Facebook.Suite.Migrations
 
         public int UpdateFrom1()
         {
-            SchemaBuilder.AlterTable("FacebookUserPartRecord",
+            SchemaBuilder.AlterTable(typeof(FacebookUserPartRecord).Name,
                 table => table
                     .CreateIndex("FacebookUser", new string[] { "FacebookUserId" })
                 );
@@ -53,7 +54,7 @@ namespace Piedone.Facebook.Suite.Migrations
 
         public int UpdateFrom2()
         {
-            SchemaBuilder.AlterTable("FacebookUserPartRecord",
+            SchemaBuilder.AlterTable(typeof(FacebookUserPartRecord).Name,
                 table => table
                     .AlterColumn("Locale", column => column.WithType(System.Data.DbType.String))
                 );

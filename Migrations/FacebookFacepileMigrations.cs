@@ -12,7 +12,7 @@ namespace Piedone.Facebook.Suite.Migrations
         public int Create()
         {
             // Creating table FacebookFacepilePartRecord
-            SchemaBuilder.CreateTable("FacebookFacepilePartRecord", table => table
+            SchemaBuilder.CreateTable(typeof(FacebookFacepilePartRecord).Name, table => table
                 .ContentPartRecord()
                 .Column<int>("Width")
                 .Column<string>("ColorScheme")
