@@ -5,6 +5,7 @@ using Orchard.ContentManagement; // For generic ContentManager methods
 using Orchard.Environment.Extensions;
 using Orchard.Mvc;
 using Piedone.Facebook.Suite.Models;
+using Facebook;
 
 namespace Piedone.Facebook.Suite.Services
 {
@@ -34,10 +35,9 @@ namespace Piedone.Facebook.Suite.Services
 
                     _facebookWebContextCache = new FacebookWebContext(
                         FacebookSuiteSettingsPart,
-                        // OR: _contentManager.Get<FacebookSuiteSettingsPart>(1), // Maybe not the most elegant way, but there will be always only one row
                         _httpContextAccessor.Current());
 
-                    //FacebookApplication.SetApplication(FacebookSuiteSettingsPart); // A workaround for a bug: http://facebooksdk.codeplex.com/workitem/5902
+                    FacebookApplication.SetApplication(FacebookSuiteSettingsPart); // A workaround for a bug: http://facebooksdk.codeplex.com/workitem/5917
                 }
                 return _facebookWebContextCache;
             }

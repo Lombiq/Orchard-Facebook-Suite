@@ -28,6 +28,5 @@ namespace Piedone.Facebook.Suite.Controllers
 
             return this.RedirectLocal(returnUrl); // this necessary, as this is from an extension (Orchard.Mvc.Extensions.ControllerExtensions)
         }
-
     }
 }
