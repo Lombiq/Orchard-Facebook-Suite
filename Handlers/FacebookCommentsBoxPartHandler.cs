@@ -6,9 +6,9 @@ using Piedone.Facebook.Suite.Models;
 namespace Piedone.Facebook.Suite.Handlers
 {
     [OrchardFeature("Piedone.Facebook.Suite.CommentsBox")]
-    public class FacebookCommentsBoxHandler : ContentHandler
+    public class FacebookCommentsPartBoxHandler : ContentHandler
     {
-        public FacebookCommentsBoxHandler(IRepository<FacebookCommentsBoxPartRecord> repository)
+        public FacebookCommentsPartBoxHandler(IRepository<FacebookCommentsBoxPartRecord> repository)
         {
             Filters.Add(StorageFilter.For(repository));
         }

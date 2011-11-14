@@ -6,9 +6,9 @@ using Piedone.Facebook.Suite.Models;
 namespace Piedone.Facebook.Suite.Handlers
 {
     [OrchardFeature("Piedone.Facebook.Suite.Connect")]
-    public class FacebookUserHandler : ContentHandler
+    public class FacebookUserPartHandler : ContentHandler
     {
-        public FacebookUserHandler(IRepository<FacebookUserPartRecord> repository)
+        public FacebookUserPartHandler(IRepository<FacebookUserPartRecord> repository)
         {
             Filters.Add(new ActivatingFilter<FacebookUserPart>("User"));
             // Enable the FacebookUser content type so we can use the content manager to manage FacebookUserParts

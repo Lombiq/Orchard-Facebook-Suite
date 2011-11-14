@@ -89,19 +89,19 @@
     <Compile Include="Drivers\FacebookLikeButtonPartDriver.cs" />
     <Compile Include="Drivers\FacebookSuiteSettingsPartDriver.cs" />
     <Compile Include="Filters\FacebookSuiteFilter.cs" />
-    <Compile Include="Handlers\FacebookLikeBoxHandler.cs" />
-    <Compile Include="Handlers\FacebookFacepileHandler.cs" />
-    <Compile Include="Handlers\FacebookLikeButtonHandler.cs" />
+    <Compile Include="Handlers\FacebookCommentsBoxPartHandler.cs" />
+    <Compile Include="Handlers\FacebookConnectPartHandler.cs" />
+    <Compile Include="Handlers\FacebookFacepilePartHandler.cs" />
+    <Compile Include="Handlers\FacebookLikeBoxPartHandler.cs" />
+    <Compile Include="Handlers\FacebookLikeButtonPartHandler.cs" />
+    <Compile Include="Handlers\FacebookSuiteSettingsPartHandler.cs" />
+    <Compile Include="Handlers\FacebookUserPartHandler.cs" />
     <Compile Include="Helpers\FacebookConnectHelper.cs" />
     <Compile Include="Migrations\FacebookLikeBoxMigrations.cs" />
     <Compile Include="Migrations\FacebookFacepileMigrations.cs" />
     <Compile Include="Migrations\FacebookLikeButtonMigrations.cs" />
     <Compile Include="Migrations\FacebookCommentsBoxMigrations.cs" />
     <Compile Include="Migrations\FacebookConnectMigrations.cs" />
-    <Compile Include="Handlers\FacebookUserHandler.cs" />
-    <Compile Include="Handlers\FacebookCommentsBoxHandler.cs" />
-    <Compile Include="Handlers\FacebookConnectHandler.cs" />
-    <Compile Include="Handlers\FacebookSuiteSettingsHandler.cs" />
     <Compile Include="Migrations\BaseMigrations.cs">
       <SubType>Code</SubType>
     </Compile>

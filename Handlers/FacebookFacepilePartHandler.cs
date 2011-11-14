@@ -6,9 +6,9 @@ using Piedone.Facebook.Suite.Models;
 namespace Piedone.Facebook.Suite.Handlers
 {
     [OrchardFeature("Piedone.Facebook.Suite.Facepile")]
-    public class FacebookFacepileHandler : ContentHandler
+    public class FacebookFacepilePartHandler : ContentHandler
     {
-        public FacebookFacepileHandler(IRepository<FacebookFacepilePartRecord> repository)
+        public FacebookFacepilePartHandler(IRepository<FacebookFacepilePartRecord> repository)
         {
             Filters.Add(StorageFilter.For(repository));
         }

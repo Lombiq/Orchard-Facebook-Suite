@@ -6,9 +6,9 @@ using Piedone.Facebook.Suite.Models;
 namespace Piedone.Facebook.Suite.Handlers
 {
     [OrchardFeature("Piedone.Facebook.Suite.LikeButton")]
-    public class FacebookLikeButtonHandler : ContentHandler
+    public class FacebookLikeButtonPartHandler : ContentHandler
     {
-        public FacebookLikeButtonHandler(IRepository<FacebookLikeButtonPartRecord> repository)
+        public FacebookLikeButtonPartHandler(IRepository<FacebookLikeButtonPartRecord> repository)
         {
             Filters.Add(StorageFilter.For(repository));
         }

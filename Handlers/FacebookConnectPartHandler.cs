@@ -6,9 +6,9 @@ using Piedone.Facebook.Suite.Models;
 namespace Piedone.Facebook.Suite.Handlers
 {
     [OrchardFeature("Piedone.Facebook.Suite.Connect")]
-    public class FacebookConnectHandler : ContentHandler
+    public class FacebookConnectPartHandler : ContentHandler
     {
-        public FacebookConnectHandler(IRepository<FacebookConnectPartRecord> repository)
+        public FacebookConnectPartHandler(IRepository<FacebookConnectPartRecord> repository)
         {
             Filters.Add(StorageFilter.For(repository));
         }

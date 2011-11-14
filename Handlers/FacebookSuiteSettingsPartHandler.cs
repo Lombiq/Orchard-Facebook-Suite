@@ -8,9 +8,9 @@ using Piedone.Facebook.Suite.Models;
 namespace Piedone.Facebook.Suite.Handlers
 {
     [OrchardFeature("Piedone.Facebook.Suite")]
-    public class FacebookSuiteSettingsHandler : ContentHandler
+    public class FacebookSuiteSettingsPartHandler : ContentHandler
     {
-        public FacebookSuiteSettingsHandler(IRepository<FacebookSuiteSettingsPartRecord> repository)
+        public FacebookSuiteSettingsPartHandler(IRepository<FacebookSuiteSettingsPartRecord> repository)
         {
             T = NullLocalizer.Instance;
 
