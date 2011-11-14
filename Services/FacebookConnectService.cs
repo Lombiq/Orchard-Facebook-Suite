@@ -187,7 +187,7 @@ namespace Piedone.Facebook.Suite.Services
 
             // This happens if one is logged in at FB and in Orchard, but here not with FB creditentials.
             // Since FacebookUserPart is attached to the User type, an empty FacebookUserPart record will be created.
-            if (part.FacebookUserId == 0) return null;
+            if (part != null && part.FacebookUserId == 0) return null;
             return part;
         }
 
