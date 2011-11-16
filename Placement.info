@@ -1,10 +1,6 @@
 ﻿<Placement>
   <!--Suite settings-->
   <Place Parts_FacebookSuiteSettings_SiteSettings="Content:10"/>
-
-  <!--Connect-->
-  <Place Parts_FacebookConnect_Edit="Content:7.5"/>
-  <Place Parts_FacebookConnect="Content:10"/>
   
   <!--Comments box-->
   <Place Parts_FacebookCommentsBox_Edit="Content:7.6"/>
