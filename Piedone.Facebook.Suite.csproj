@@ -99,7 +99,7 @@
     <Compile Include="Models\FacebookFacepile.cs" />
     <Compile Include="Models\FacebookLikeButton.cs" />
     <Compile Include="Models\FacebookCommentsBox.cs" />
-    <Compile Include="Models\FacebookAppSettings.cs" />
+    <Compile Include="Models\FacebookSuiteSettings.cs" />
     <Compile Include="Models\SocialPlugin.cs" />
     <Compile Include="ResourceManifest.cs" />
     <Compile Include="Services\FacebookSuiteService.cs" />
