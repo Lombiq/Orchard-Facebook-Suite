@@ -11,8 +11,7 @@ namespace Piedone.Facebook.Suite.Migrations
     {
         public int Create()
         {
-            // Creating table FacebookCommentsBoxPartRecord
-            SchemaBuilder.CreateTable("FacebookCommentsBoxPartRecord", table => table
+            SchemaBuilder.CreateTable(typeof(FacebookCommentsBoxPartRecord).Name, table => table
                 .ContentPartRecord()
                 .Column<int>("NumberOfPosts")
                 .Column<int>("Width")
@@ -23,7 +22,7 @@ namespace Piedone.Facebook.Suite.Migrations
                 builder => builder.Attachable());
 
             ContentDefinitionManager.AlterTypeDefinition("FacebookCommentsBoxWidget", cfg => cfg
-                .WithPart("FacebookCommentsBoxPart")
+                .WithPart(typeof(FacebookCommentsBoxPart).Name)
                 .WithPart("WidgetPart")
                 .WithPart("CommonPart")
                 .WithSetting("Stereotype", "Widget"));

@@ -27,7 +27,7 @@ namespace Piedone.Facebook.Suite.Migrations
                 builder => builder.Attachable());
 
             ContentDefinitionManager.AlterTypeDefinition("FacebookLikeBoxWidget", cfg => cfg
-                .WithPart("FacebookLikeBoxPart")
+                .WithPart(typeof(FacebookLikeBoxPart).Name)
                 .WithPart("WidgetPart")
                 .WithPart("CommonPart")
                 .WithSetting("Stereotype", "Widget"));

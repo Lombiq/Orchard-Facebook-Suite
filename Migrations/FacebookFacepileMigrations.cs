@@ -25,7 +25,7 @@ namespace Piedone.Facebook.Suite.Migrations
                 builder => builder.Attachable());
 
             ContentDefinitionManager.AlterTypeDefinition("FacebookFacepileWidget", cfg => cfg
-                .WithPart("FacebookFacepilePart")
+                .WithPart(typeof(FacebookFacepilePart).Name)
                 .WithPart("WidgetPart")
                 .WithPart("CommonPart")
                 .WithSetting("Stereotype", "Widget"));
