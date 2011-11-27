@@ -12,23 +12,25 @@ namespace Piedone.Facebook.Suite.Migrations
         public int Create()
         {
             // Creating table FacebookFacepilePartRecord
-            SchemaBuilder.CreateTable(typeof(FacebookFacepilePartRecord).Name, table => table
-                .ContentPartRecord()
-                .Column<int>("Width")
-                .Column<string>("ColorScheme")
-                .Column<int>("MaxRows")
-                .Column<string>("Size")
-
+            SchemaBuilder.CreateTable(typeof(FacebookFacepilePartRecord).Name, 
+                table => table
+                    .ContentPartRecord()
+                    .Column<int>("Width")
+                    .Column<string>("ColorScheme")
+                    .Column<int>("MaxRows")
+                    .Column<string>("Size")
             );
 
             ContentDefinitionManager.AlterPartDefinition(typeof(FacebookFacepilePart).Name,
                 builder => builder.Attachable());
 
-            ContentDefinitionManager.AlterTypeDefinition("FacebookFacepileWidget", cfg => cfg
-                .WithPart(typeof(FacebookFacepilePart).Name)
-                .WithPart("WidgetPart")
-                .WithPart("CommonPart")
-                .WithSetting("Stereotype", "Widget"));
+            ContentDefinitionManager.AlterTypeDefinition("FacebookFacepileWidget", 
+                cfg => cfg
+                    .WithPart(typeof(FacebookFacepilePart).Name)
+                    .WithPart("WidgetPart")
+                    .WithPart("CommonPart")
+                    .WithSetting("Stereotype", "Widget")
+            );
 
 
             return 1;

@@ -12,26 +12,29 @@ namespace Piedone.Facebook.Suite.Migrations
         public int Create()
         {
             // Creating table FacebookLikeButtonPartRecord
-            SchemaBuilder.CreateTable(typeof(FacebookLikeButtonPartRecord).Name, table => table
-                .ContentPartRecord()
-                .Column<bool>("EnableSendButton")
-                .Column<string>("LayoutStyle")
-                .Column<int>("Width")
-                .Column<bool>("ShowFaces")
-                .Column<string>("VerbToDisplay")
-                .Column<string>("ColorScheme")
-                .Column<string>("Font")
+            SchemaBuilder.CreateTable(typeof(FacebookLikeButtonPartRecord).Name, 
+                table => table
+                    .ContentPartRecord()
+                    .Column<bool>("EnableSendButton")
+                    .Column<string>("LayoutStyle")
+                    .Column<int>("Width")
+                    .Column<bool>("ShowFaces")
+                    .Column<string>("VerbToDisplay")
+                    .Column<string>("ColorScheme")
+                    .Column<string>("Font")
             );
 
 
             ContentDefinitionManager.AlterPartDefinition(typeof(FacebookLikeButtonPart).Name,
                 builder => builder.Attachable());
 
-            ContentDefinitionManager.AlterTypeDefinition("FacebookLikeButtonWidget", cfg => cfg
-                .WithPart(typeof(FacebookLikeButtonPart).Name)
-                .WithPart("WidgetPart")
-                .WithPart("CommonPart")
-                .WithSetting("Stereotype", "Widget"));
+            ContentDefinitionManager.AlterTypeDefinition("FacebookLikeButtonWidget", 
+                cfg => cfg
+                    .WithPart(typeof(FacebookLikeButtonPart).Name)
+                    .WithPart("WidgetPart")
+                    .WithPart("CommonPart")
+                    .WithSetting("Stereotype", "Widget")
+            );
 
 
             return 1;

@@ -12,25 +12,28 @@ namespace Piedone.Facebook.Suite.Migrations
         public int Create()
         {
             // Creating table FacebookLikeBoxPartRecord
-            SchemaBuilder.CreateTable(typeof(FacebookLikeBoxPartRecord).Name, table => table
-                .ContentPartRecord()
-                .Column<string>("PageUrl")
-                .Column<int>("Width")
-                .Column<string>("ColorScheme")
-                .Column<bool>("ShowFaces")
-                .Column<string>("BorderColor")
-                .Column<bool>("ShowStream")
-                .Column<bool>("ShowHeader")
+            SchemaBuilder.CreateTable(typeof(FacebookLikeBoxPartRecord).Name, 
+                table => table
+                    .ContentPartRecord()
+                    .Column<string>("PageUrl")
+                    .Column<int>("Width")
+                    .Column<string>("ColorScheme")
+                    .Column<bool>("ShowFaces")
+                    .Column<string>("BorderColor")
+                    .Column<bool>("ShowStream")
+                    .Column<bool>("ShowHeader")
             );
 
             ContentDefinitionManager.AlterPartDefinition(typeof(FacebookLikeBoxPart).Name,
                 builder => builder.Attachable());
 
-            ContentDefinitionManager.AlterTypeDefinition("FacebookLikeBoxWidget", cfg => cfg
-                .WithPart(typeof(FacebookLikeBoxPart).Name)
-                .WithPart("WidgetPart")
-                .WithPart("CommonPart")
-                .WithSetting("Stereotype", "Widget"));
+            ContentDefinitionManager.AlterTypeDefinition("FacebookLikeBoxWidget", 
+                cfg => cfg
+                    .WithPart(typeof(FacebookLikeBoxPart).Name)
+                    .WithPart("WidgetPart")
+                    .WithPart("CommonPart")
+                    .WithSetting("Stereotype", "Widget")
+            );
 
 
             return 1;

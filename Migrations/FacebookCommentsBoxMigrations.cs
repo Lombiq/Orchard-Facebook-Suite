@@ -11,21 +11,24 @@ namespace Piedone.Facebook.Suite.Migrations
     {
         public int Create()
         {
-            SchemaBuilder.CreateTable(typeof(FacebookCommentsBoxPartRecord).Name, table => table
-                .ContentPartRecord()
-                .Column<int>("NumberOfPosts")
-                .Column<int>("Width")
-                .Column<string>("ColorScheme")
+            SchemaBuilder.CreateTable(typeof(FacebookCommentsBoxPartRecord).Name, 
+                table => table
+                    .ContentPartRecord()
+                    .Column<int>("NumberOfPosts")
+                    .Column<int>("Width")
+                    .Column<string>("ColorScheme")
             );
 
             ContentDefinitionManager.AlterPartDefinition(typeof(FacebookCommentsBoxPart).Name,
                 builder => builder.Attachable());
 
-            ContentDefinitionManager.AlterTypeDefinition("FacebookCommentsBoxWidget", cfg => cfg
-                .WithPart(typeof(FacebookCommentsBoxPart).Name)
-                .WithPart("WidgetPart")
-                .WithPart("CommonPart")
-                .WithSetting("Stereotype", "Widget"));
+            ContentDefinitionManager.AlterTypeDefinition("FacebookCommentsBoxWidget", 
+                cfg => cfg
+                    .WithPart(typeof(FacebookCommentsBoxPart).Name)
+                    .WithPart("WidgetPart")
+                    .WithPart("CommonPart")
+                    .WithSetting("Stereotype", "Widget")
+            );
 
 
             return 1;
