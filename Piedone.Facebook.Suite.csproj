@@ -109,7 +109,9 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <None Include="Placement.info" />
+    <None Include="Placement.info">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Views\EditorTemplates\Parts\FacebookConnect.cshtml" />
     <Content Include="Views\Parts\FacebookConnect.cshtml" />
     <Content Include="Views\EditorTemplates\Parts\FacebookCommentsBox.cshtml" />
