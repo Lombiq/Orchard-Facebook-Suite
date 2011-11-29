@@ -10,6 +10,8 @@ namespace Piedone.Facebook.Suite.Handlers
     [OrchardFeature("Piedone.Facebook.Suite")]
     public class FacebookSuiteSettingsPartHandler : ContentHandler
     {
+        public Localizer T { get; set; }
+
         public FacebookSuiteSettingsPartHandler(IRepository<FacebookSuiteSettingsPartRecord> repository)
         {
             T = NullLocalizer.Instance;
@@ -22,13 +24,11 @@ namespace Piedone.Facebook.Suite.Handlers
             Filters.Add(StorageFilter.For(repository));
         }
 
-        public Localizer T { get; set; }
-
         protected override void GetItemMetadata(GetContentItemMetadataContext context) {
             if (context.ContentItem.ContentType != "Site")
                 return;
             base.GetItemMetadata(context);
-            var groupInfo = new GroupInfo(T("Facebook Suite Settings")); // Addig a new group to the "Settings" menu.
+            var groupInfo = new GroupInfo(T("Facebook Suite")); // Addig a new group to the "Settings" menu.
             groupInfo.Id = "FacebookSuiteSettings";
             context.Metadata.EditorGroupInfo.Add(groupInfo);
         }
