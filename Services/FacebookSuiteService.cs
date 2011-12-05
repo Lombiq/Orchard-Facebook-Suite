@@ -6,21 +6,22 @@ using Orchard.Environment.Extensions;
 using Orchard.Mvc;
 using Piedone.Facebook.Suite.Models;
 using Facebook;
+using Orchard.Settings;
 
 namespace Piedone.Facebook.Suite.Services
 {
     [OrchardFeature("Piedone.Facebook.Suite")]
     public class FacebookSuiteService : IFacebookSuiteService
     {
-        private readonly IOrchardServices _orchardServices;
+        private readonly ISiteService _siteService;
         private readonly IHttpContextAccessor _httpContextAccessor;
 
         public FacebookSuiteService(
-            IHttpContextAccessor httpContextAccessor, 
-            IOrchardServices orchardServices)
+            IHttpContextAccessor httpContextAccessor,
+            ISiteService siteService)
         {
             _httpContextAccessor = httpContextAccessor;
-            _orchardServices = orchardServices;
+            _siteService = siteService;
         }
 
         private FacebookWebContext _facebookWebContextCache;
@@ -50,7 +51,7 @@ namespace Piedone.Facebook.Suite.Services
             {
                 if (_facebookSuiteSettingsPartCache == null)
                 {
-                    _facebookSuiteSettingsPartCache = _orchardServices.WorkContext.CurrentSite.As<FacebookSuiteSettingsPart>();
+                    _facebookSuiteSettingsPartCache = _siteService.GetSiteSettings().As<FacebookSuiteSettingsPart>();
                 }
                 return _facebookSuiteSettingsPartCache;
             }
