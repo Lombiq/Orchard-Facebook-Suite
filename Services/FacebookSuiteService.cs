@@ -37,8 +37,6 @@ namespace Piedone.Facebook.Suite.Services
                     _facebookWebContextCache = new FacebookWebContext(
                         FacebookSuiteSettingsPart,
                         _httpContextAccessor.Current());
-
-                    FacebookApplication.SetApplication(FacebookSuiteSettingsPart); // A workaround for a bug: http://facebooksdk.codeplex.com/workitem/5917
                 }
                 return _facebookWebContextCache;
             }

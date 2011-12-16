@@ -14,6 +14,7 @@ namespace Piedone.Facebook.Suite.Models
         public virtual string CancelUrlPath { get; set; }
         public virtual string CanvasPage { get; set; }
         public virtual string CanvasUrl { get; set; }
+        public virtual bool IsSecureConnection { get; set; }
         public virtual string SecureCanvasUrl { get; set; }
         public virtual string SiteUrl { get; set; }
         public virtual bool UseFacebookBeta { get; set; }
@@ -52,6 +53,12 @@ namespace Piedone.Facebook.Suite.Models
         {
             get { return Record.CanvasUrl; }
             set { Record.CanvasUrl = value; }
+        }
+
+        public bool IsSecureConnection
+        {
+            get { return Record.IsSecureConnection; }
+            set { Record.IsSecureConnection = value; }
         }
 
         public string SecureCanvasUrl

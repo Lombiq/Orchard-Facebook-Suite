@@ -5,26 +5,37 @@ using Piedone.Facebook.Suite.Models;
 namespace Piedone.Facebook.Suite.Migrations
 {
     [OrchardFeature("Piedone.Facebook.Suite")]
-    public class BaseMigrations : DataMigrationImpl {
-
-        public int Create() {
-			// Creating table FacebookSuiteSettingsPartRecord
-			SchemaBuilder.CreateTable(typeof(FacebookSuiteSettingsPartRecord).Name, 
+    public class BaseMigrations : DataMigrationImpl
+    {
+        public int Create()
+        {
+            // Creating table FacebookSuiteSettingsPartRecord
+            SchemaBuilder.CreateTable(typeof(FacebookSuiteSettingsPartRecord).Name,
                 table => table
-				    .ContentPartRecord()
+                    .ContentPartRecord()
                     .Column<string>("AppId")
                     .Column<string>("AppSecret")
                     .Column<string>("CancelUrlPath")
                     .Column<string>("CanvasPage")
                     .Column<string>("CanvasUrl")
+                    .Column<bool>("IsSecureConnection")
                     .Column<string>("SecureCanvasUrl")
                     .Column<string>("SiteUrl")
-				    .Column<bool>("UseFacebookBeta")
-			);
+                    .Column<bool>("UseFacebookBeta")
+            );
 
 
+            return 2;
+        }
 
-            return 1;
+        public int UpdateFrom1()
+        {
+            SchemaBuilder.AlterTable(typeof(FacebookSuiteSettingsPartRecord).Name,
+                table => table
+                    .AddColumn<bool>("IsSecureConnection")
+                );
+
+            return 2;
         }
     }
 }
