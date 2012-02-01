@@ -8,7 +8,7 @@ namespace Piedone.Facebook.Suite.Handlers
     [OrchardFeature("Piedone.Facebook.Suite.CommentsBox")]
     public class FacebookCommentsPartBoxHandler : ContentHandler
     {
-        public FacebookCommentsPartBoxHandler(IRepository<FacebookCommentsBoxPartRecord> repository)
+        public FacebookCommentsPartBoxHandler(IRepository<FacebookCommentsBoxWidgetPartRecord> repository)
         {
             Filters.Add(StorageFilter.For(repository));
         }

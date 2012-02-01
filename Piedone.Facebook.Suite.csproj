@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Drivers\FacebookCommentsBoxPartDriver.cs" />
+    <Compile Include="Drivers\FacebookCommentsBoxWidgetPartDriver.cs" />
     <Compile Include="Drivers\FacebookFacepilePartDriver.cs" />
     <Compile Include="Drivers\FacebookLikeBoxPartDriver.cs" />
     <Compile Include="Drivers\FacebookLikeButtonPartDriver.cs" />
@@ -95,15 +96,26 @@
     <Compile Include="Migrations\BaseMigrations.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\CommentsBox\FacebookCommentsBoxPartRecord.cs" />
+    <Compile Include="Models\CommentsBox\FacebookCommentsBoxWidgetPartRecord.cs" />
+    <Compile Include="Models\CommentsBox\FacebookCommentsBoxPart.cs" />
+    <Compile Include="Models\CommentsBox\IFacebookCommentsBox.cs" />
+    <Compile Include="Models\SocialPluginPartBase.cs" />
+    <Compile Include="Models\SocialPluginPartRecordBase.cs" />
+    <Compile Include="Models\SocialPluginTypePartSettingsBase.cs" />
+    <Compile Include="Models\CommentsBox\FacebookCommentsBoxTypePartSettings.cs" />
     <Compile Include="Models\FacebookLikeBox.cs" />
     <Compile Include="Models\FacebookFacepile.cs" />
     <Compile Include="Models\FacebookLikeButton.cs" />
-    <Compile Include="Models\FacebookCommentsBox.cs" />
+    <Compile Include="Models\CommentsBox\FacebookCommentsBoxWidgetPart.cs" />
     <Compile Include="Models\FacebookSuiteSettings.cs" />
-    <Compile Include="Models\SocialPlugin.cs" />
+    <Compile Include="Models\ISocialPlugin.cs" />
+    <Compile Include="Models\SocialPluginWidgetPartBase.cs" />
+    <Compile Include="Models\SocialPluginWidgetPartRecordBase.cs" />
     <Compile Include="ResourceManifest.cs" />
     <Compile Include="Services\FacebookSuiteService.cs" />
     <Compile Include="Services\IFacebookSuiteService.cs" />
+    <Compile Include="Settings\FacebookCommentsBoxSettingsHooks.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config">

@@ -4,7 +4,7 @@ using Orchard.Environment.Extensions;
 namespace Piedone.Facebook.Suite.Models
 {
     [OrchardFeature("Piedone.Facebook.Suite.LikeButton")]
-    public class FacebookLikeButtonPartRecord : SocialPluginPartRecord
+    public class FacebookLikeButtonPartRecord : SocialPluginWidgetPartRecordBase
     {
         public virtual bool EnableSendButton { get; set; }
         public virtual string LayoutStyle { get; set; }
@@ -23,7 +23,7 @@ namespace Piedone.Facebook.Suite.Models
     }
 
     [OrchardFeature("Piedone.Facebook.Suite.LikeButton")]
-    public class FacebookLikeButtonPart : SocialPluginPart<FacebookLikeButtonPartRecord>
+    public class FacebookLikeButtonPart : SocialPluginWidgetPartBase<FacebookLikeButtonPartRecord>
     {
         [Required]
         public bool EnableSendButton

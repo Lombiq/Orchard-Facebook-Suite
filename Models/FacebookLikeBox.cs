@@ -4,7 +4,7 @@ using Orchard.Environment.Extensions;
 namespace Piedone.Facebook.Suite.Models
 {
     [OrchardFeature("Piedone.Facebook.Suite.LikeBox")]
-    public class FacebookLikeBoxPartRecord : SocialPluginPartRecord
+    public class FacebookLikeBoxPartRecord : SocialPluginWidgetPartRecordBase
     {
         public virtual string PageUrl { get; set; }
         public virtual bool ShowFaces { get; set; }
@@ -22,7 +22,7 @@ namespace Piedone.Facebook.Suite.Models
     }
 
     [OrchardFeature("Piedone.Facebook.Suite.LikeBox")]
-    public class FacebookLikeBoxPart : SocialPluginPart<FacebookLikeBoxPartRecord>
+    public class FacebookLikeBoxPart : SocialPluginWidgetPartBase<FacebookLikeBoxPartRecord>
     {
         [Required]
         public string PageUrl

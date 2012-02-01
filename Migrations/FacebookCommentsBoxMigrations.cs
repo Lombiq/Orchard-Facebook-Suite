@@ -11,7 +11,7 @@ namespace Piedone.Facebook.Suite.Migrations
     {
         public int Create()
         {
-            SchemaBuilder.CreateTable(typeof(FacebookCommentsBoxPartRecord).Name, 
+            SchemaBuilder.CreateTable(typeof(FacebookCommentsBoxWidgetPartRecord).Name, 
                 table => table
                     .ContentPartRecord()
                     .Column<int>("NumberOfPosts")
@@ -19,19 +19,43 @@ namespace Piedone.Facebook.Suite.Migrations
                     .Column<string>("ColorScheme")
             );
 
-            ContentDefinitionManager.AlterPartDefinition(typeof(FacebookCommentsBoxPart).Name,
-                builder => builder.Attachable());
-
             ContentDefinitionManager.AlterTypeDefinition("FacebookCommentsBoxWidget", 
                 cfg => cfg
-                    .WithPart(typeof(FacebookCommentsBoxPart).Name)
+                    .WithPart(typeof(FacebookCommentsBoxWidgetPart).Name)
                     .WithPart("WidgetPart")
                     .WithPart("CommonPart")
                     .WithSetting("Stereotype", "Widget")
             );
 
+            ContentDefinitionManager.AlterPartDefinition(typeof(FacebookCommentsBoxPart).Name,
+                builder => builder.Attachable());
+
 
             return 1;
+        }
+
+        public int UpdateFrom1()
+        {
+            ContentDefinitionManager.DeletePartDefinition("FacebookCommentsBoxPart");
+
+            SchemaBuilder.DropTable("FacebookCommentsBoxPartRecord");
+
+            SchemaBuilder.CreateTable(typeof(FacebookCommentsBoxWidgetPartRecord).Name,
+                table => table
+                    .ContentPartRecord()
+                    .Column<int>("NumberOfPosts")
+                    .Column<int>("Width")
+                    .Column<string>("ColorScheme")
+            );
+
+            // Hidden?
+            //ContentDefinitionManager.AlterPartDefinition(typeof(FacebookCommentsBoxWidgetPart).Name,
+            //    builder => builder.Attachable(false));
+
+            ContentDefinitionManager.AlterPartDefinition(typeof(FacebookCommentsBoxPart).Name,
+                builder => builder.Attachable());
+
+            return 2;
         }
     }
 }

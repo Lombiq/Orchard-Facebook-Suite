@@ -4,7 +4,7 @@ using Orchard.Environment.Extensions;
 namespace Piedone.Facebook.Suite.Models
 {
     [OrchardFeature("Piedone.Facebook.Suite.Facepile")]
-    public class FacebookFacepilePartRecord : SocialPluginPartRecord
+    public class FacebookFacepilePartRecord : SocialPluginWidgetPartRecordBase
     {
         public virtual int MaxRows { get; set; }
         public virtual string Size { get; set; }
@@ -17,7 +17,7 @@ namespace Piedone.Facebook.Suite.Models
     }
 
     [OrchardFeature("Piedone.Facebook.Suite.Facepile")]
-    public class FacebookFacepilePart : SocialPluginPart<FacebookFacepilePartRecord>
+    public class FacebookFacepilePart : SocialPluginWidgetPartBase<FacebookFacepilePartRecord>
     {
         [Required]
         public int MaxRows

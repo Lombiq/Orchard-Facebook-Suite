@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Orchard.Environment.Extensions;
-using Orchard.ContentManagement.Drivers;
 using Piedone.Facebook.Suite.Models;
 
-namespace Piedone.Facebook.Suite.Drivers
+namespace Piedone.Facebook.Suite.Models
 {
     [OrchardFeature("Piedone.Facebook.Suite.CommentsBox")]
-    public class FacebookCommentsBoxPartDriver : ContentPartDriver<FacebookCommentsBoxPart>
+    public class FacebookCommentsBoxPart : SocialPluginPartBase<FacebookCommentsBoxPartRecord>, IFacebookCommentsBox
     {
     }
 }
