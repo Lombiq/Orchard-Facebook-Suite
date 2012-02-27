@@ -8,7 +8,7 @@ using Piedone.Facebook.Suite.Models;
 namespace Piedone.Facebook.Suite.Models
 {
     [OrchardFeature("Piedone.Facebook.Suite.CommentsBox")]
-    public class FacebookCommentsBoxPart : SocialPluginPartBase<FacebookCommentsBoxPartRecord>, IFacebookCommentsBox
+    public class FacebookCommentsBoxPart : SocialPluginPartBase<FacebookCommentsBoxPartRecord>
     {
     }
 }

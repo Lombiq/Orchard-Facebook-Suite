@@ -11,6 +11,7 @@ namespace Piedone.Facebook.Suite.Handlers
         public FacebookCommentsPartBoxHandler(IRepository<FacebookCommentsBoxWidgetPartRecord> repository)
         {
             Filters.Add(StorageFilter.For(repository));
+            Filters.Add(new ActivatingFilter<FacebookCommentsBoxWidgetPart>("FacebookCommentsBoxPartWidget"));
         }
     }
 }

@@ -89,6 +89,7 @@
     <Compile Include="Handlers\FacebookLikeBoxPartHandler.cs" />
     <Compile Include="Handlers\FacebookLikeButtonPartHandler.cs" />
     <Compile Include="Handlers\FacebookSuiteSettingsPartHandler.cs" />
+    <Compile Include="Migrations\DataMigrationExtensions.cs" />
     <Compile Include="Migrations\FacebookLikeBoxMigrations.cs" />
     <Compile Include="Migrations\FacebookFacepileMigrations.cs" />
     <Compile Include="Migrations\FacebookLikeButtonMigrations.cs" />
@@ -99,7 +100,6 @@
     <Compile Include="Models\CommentsBox\FacebookCommentsBoxPartRecord.cs" />
     <Compile Include="Models\CommentsBox\FacebookCommentsBoxWidgetPartRecord.cs" />
     <Compile Include="Models\CommentsBox\FacebookCommentsBoxPart.cs" />
-    <Compile Include="Models\CommentsBox\IFacebookCommentsBox.cs" />
     <Compile Include="Models\SocialPluginPartBase.cs" />
     <Compile Include="Models\SocialPluginPartRecordBase.cs" />
     <Compile Include="Models\SocialPluginTypePartSettingsBase.cs" />
@@ -109,7 +109,6 @@
     <Compile Include="Models\FacebookLikeButton.cs" />
     <Compile Include="Models\CommentsBox\FacebookCommentsBoxWidgetPart.cs" />
     <Compile Include="Models\FacebookSuiteSettings.cs" />
-    <Compile Include="Models\ISocialPlugin.cs" />
     <Compile Include="Models\SocialPluginWidgetPartBase.cs" />
     <Compile Include="Models\SocialPluginWidgetPartRecordBase.cs" />
     <Compile Include="ResourceManifest.cs" />
@@ -153,6 +152,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DefinitionTemplates\SocialPluginTypePartSettings.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

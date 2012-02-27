@@ -28,25 +28,5 @@ namespace Piedone.Facebook.Suite.Drivers
             updater.TryUpdateModel(part, Prefix, null, null);
             return Editor(part, shapeHelper);
         }
-
-        //// GET
-        //protected override DriverResult Editor(FacebookSuiteSettingsPart part, dynamic shapeHelper)
-        //{
-        //    return Editor(part, null, shapeHelper);
-        //}
-
-        //// POST
-        //protected override DriverResult Editor(FacebookSuiteSettingsPart part, IUpdateModel updater, dynamic shapeHelper)
-        //{
-        //    return ContentShape("Parts_FacebookSuiteSettings_SiteSettings", () =>
-        //    {
-        //        if (updater != null)
-        //        {
-        //            updater.TryUpdateModel(part.Record, Prefix, null, null);
-        //        }
-        //        return shapeHelper.EditorTemplate(TemplateName: "Parts.FacebookSuiteSettings.SiteSettings", Model: part, Prefix: Prefix);
-        //    })
-        //    .OnGroup("FacebookSuiteSettings");
-        //}
     }
 }

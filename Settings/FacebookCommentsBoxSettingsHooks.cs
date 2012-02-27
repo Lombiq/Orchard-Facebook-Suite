@@ -9,12 +9,20 @@ using Orchard.ContentManagement.MetaData.Models;
 using Piedone.Facebook.Suite.Models;
 using Orchard.ContentManagement.MetaData.Builders;
 using Orchard.ContentManagement;
+using Piedone.Facebook.Suite.Drivers;
 
 namespace Piedone.Facebook.Suite.Settings
 {
     [OrchardFeature("Piedone.Facebook.Suite.CommentsBox")]
     public class FacebookCommentsBoxSettingsHooks : ContentDefinitionEditorEventsBase
     {
+        private readonly IContentManager _contentManager;
+
+        public FacebookCommentsBoxSettingsHooks(IContentManager contentManager)
+        {
+            _contentManager = contentManager;
+        }
+
         public override IEnumerable<TemplateViewModel> TypePartEditor(ContentTypePartDefinition definition)
         {
             if (definition.PartDefinition.Name != "FacebookCommentsBoxPart")
@@ -22,23 +30,35 @@ namespace Piedone.Facebook.Suite.Settings
 
             var model = definition.Settings.GetModel<FacebookCommentsBoxTypePartSettings>();
 
-            yield return DefinitionTemplate(model);
+            model.WidgetEditor = _contentManager.BuildEditor(GetWidget(model));
+
+            yield return DefinitionTemplate(model, "SocialPluginTypePartSettings", "SocialPluginTypePartSettings");
         }
 
-        public override IEnumerable<TemplateViewModel> TypePartEditorUpdate(ContentTypePartDefinitionBuilder builder, IUpdateModel updateModel)
+        public override IEnumerable<TemplateViewModel> TypePartEditorUpdate(ContentTypePartDefinitionBuilder builder, IUpdateModel updater)
         {
             if (builder.Name != "FacebookCommentsBoxPart")
                 yield break;
 
             var model = new FacebookCommentsBoxTypePartSettings();
 
-            updateModel.TryUpdateModel(model, "FacebookCommentsBoxTypePartSettings", null, null);
+            // This update is necessary as there seems no way to get the current settings as in TypePartEditor()
+            updater.TryUpdateModel(model, "SocialPluginTypePartSettings", null, null);
 
-            builder.WithSetting("FacebookCommentsBoxTypePartSettings.Width", model.Width.ToString());
-            builder.WithSetting("FacebookCommentsBoxTypePartSettings.ColorScheme", model.ColorScheme);
-            builder.WithSetting("FacebookCommentsBoxTypePartSettings.NumberOfPosts", model.NumberOfPosts.ToString());
+            var widget = GetWidget(model);
+            updater.TryUpdateModel(widget.As<FacebookCommentsBoxWidgetPart>(), "SocialPluginTypePartSettings." + FacebookCommentsBoxWidgetPartDriver.EditorPrefix, null, null);
+            //_contentManager.UpdateEditor(widget, updater);
+            model.WidgetEditor = _contentManager.BuildEditor(widget);
+            if (widget.Id == 0) _contentManager.Create(widget);
 
-            yield return DefinitionTemplate(model);
+            builder.WithSetting("FacebookCommentsBoxTypePartSettings.WidgetId", widget.Id.ToString());
+
+            yield return DefinitionTemplate(model, "SocialPluginTypePartSettings", "SocialPluginTypePartSettings");
+        }
+
+        private IContent GetWidget(FacebookCommentsBoxTypePartSettings settings)
+        {
+            return settings.WidgetId == 0 ? _contentManager.New("FacebookCommentsBoxPartWidget") : _contentManager.Get(settings.WidgetId);
         }
     }
 }

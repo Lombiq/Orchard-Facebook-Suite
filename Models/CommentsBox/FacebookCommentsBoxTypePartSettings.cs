@@ -7,14 +7,7 @@ using Orchard.Environment.Extensions;
 namespace Piedone.Facebook.Suite.Models
 {
     [OrchardFeature("Piedone.Facebook.Suite.CommentsBox")]
-    public class FacebookCommentsBoxTypePartSettings : SocialPluginTypePartSettingsBase, IFacebookCommentsBox
+    public class FacebookCommentsBoxTypePartSettings : SocialPluginTypePartSettingsBase
     {
-        public int NumberOfPosts { get; set; }
-
-        public FacebookCommentsBoxTypePartSettings()
-            : base()
-        {
-            NumberOfPosts = 15;
-        }
     }
 }

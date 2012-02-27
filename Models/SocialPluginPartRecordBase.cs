@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Orchard.ContentManagement.Records;
+using Orchard.Environment.Extensions;
 
 namespace Piedone.Facebook.Suite.Models
 {
-    public class SocialPluginPartRecordBase : ContentPartRecord
+    [OrchardFeature("Piedone.Facebook.Suite")]
+    public abstract class SocialPluginPartRecordBase : ContentPartRecord
     {
         public virtual bool Enabled { get; set; }
+
+        protected SocialPluginPartRecordBase()
+        {
+            Enabled = true;
+        }
     }
 }

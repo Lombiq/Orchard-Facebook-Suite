@@ -4,7 +4,7 @@ using Orchard.Environment.Extensions;
 namespace Piedone.Facebook.Suite.Models
 {
     [OrchardFeature("Piedone.Facebook.Suite.CommentsBox")]
-    public class FacebookCommentsBoxWidgetPart : SocialPluginWidgetPartBase<FacebookCommentsBoxWidgetPartRecord>, IFacebookCommentsBox
+    public class FacebookCommentsBoxWidgetPart : SocialPluginWidgetPartBase<FacebookCommentsBoxWidgetPartRecord>
     {
         [Required]
         public int NumberOfPosts

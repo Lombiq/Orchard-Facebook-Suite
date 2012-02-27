@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Orchard.ContentManagement;
 using Orchard.ContentManagement.Records;
+using Orchard.Environment.Extensions;
 
 namespace Piedone.Facebook.Suite.Models
 {
@@ -8,7 +9,8 @@ namespace Piedone.Facebook.Suite.Models
     /// Base class for social plugin settings parts
     /// </summary>
     /// <typeparam name="TSocialPluginPartRecord">A child of SocialPluginPartRecord</typeparam>
-    public abstract class SocialPluginWidgetPartBase<TRecord> : ContentPart<TRecord>, ISocialPlugin
+    [OrchardFeature("Piedone.Facebook.Suite")]
+    public abstract class SocialPluginWidgetPartBase<TRecord> : ContentPart<TRecord>
         where TRecord : SocialPluginWidgetPartRecordBase
     {
         [Required]
