@@ -112,8 +112,6 @@
     <Content Include="Placement.info">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Views\EditorTemplates\Parts\FacebookConnect.cshtml" />
-    <Content Include="Views\Parts\FacebookConnect.cshtml" />
     <Content Include="Views\EditorTemplates\Parts\FacebookCommentsBox.cshtml" />
     <Content Include="Views\Parts\FacebookCommentsBox.cshtml" />
     <Content Include="Views\FacebookInit.cshtml" />
