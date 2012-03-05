@@ -88,6 +88,7 @@
     <Compile Include="Handlers\FacebookLikeBoxPartHandler.cs" />
     <Compile Include="Handlers\FacebookLikeButtonPartHandler.cs" />
     <Compile Include="Handlers\FacebookSuiteSettingsPartHandler.cs" />
+    <Compile Include="Migrations\CreateTableCommandExtensions.cs" />
     <Compile Include="Migrations\FacebookLikeBoxMigrations.cs" />
     <Compile Include="Migrations\FacebookFacepileMigrations.cs" />
     <Compile Include="Migrations\FacebookLikeButtonMigrations.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="Models\FacebookCommentsBox.cs" />
     <Compile Include="Models\FacebookSuiteSettings.cs" />
     <Compile Include="Models\SocialPlugin.cs" />
+    <Compile Include="Models\SocialPluginWithHeight.cs" />
     <Compile Include="ResourceManifest.cs" />
     <Compile Include="Services\FacebookSuiteService.cs" />
     <Compile Include="Services\IFacebookSuiteService.cs" />
@@ -139,6 +141,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\HeightEditor.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

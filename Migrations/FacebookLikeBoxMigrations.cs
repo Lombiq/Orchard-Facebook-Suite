@@ -14,10 +14,8 @@ namespace Piedone.Facebook.Suite.Migrations
             // Creating table FacebookLikeBoxPartRecord
             SchemaBuilder.CreateTable(typeof(FacebookLikeBoxPartRecord).Name, 
                 table => table
-                    .ContentPartRecord()
+                    .SocialPluginWithHeightPartRecord()
                     .Column<string>("PageUrl")
-                    .Column<int>("Width")
-                    .Column<string>("ColorScheme")
                     .Column<bool>("ShowFaces")
                     .Column<string>("BorderColor")
                     .Column<bool>("ShowStream")
@@ -36,7 +34,16 @@ namespace Piedone.Facebook.Suite.Migrations
             );
 
 
-            return 1;
+            return 2;
+        }
+
+        public int UpdateFrom1()
+        {
+            SchemaBuilder.AlterTable(typeof(FacebookLikeBoxPartRecord).Name,
+                table => table
+                    .AddColumn<int>("Height"));
+
+            return 2;
         }
     }
 }

@@ -14,9 +14,7 @@ namespace Piedone.Facebook.Suite.Migrations
             // Creating table FacebookFacepilePartRecord
             SchemaBuilder.CreateTable(typeof(FacebookFacepilePartRecord).Name, 
                 table => table
-                    .ContentPartRecord()
-                    .Column<int>("Width")
-                    .Column<string>("ColorScheme")
+                    .SocialPluginPartRecord()
                     .Column<int>("MaxRows")
                     .Column<string>("Size")
             );

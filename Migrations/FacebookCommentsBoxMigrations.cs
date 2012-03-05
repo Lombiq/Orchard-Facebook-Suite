@@ -13,10 +13,8 @@ namespace Piedone.Facebook.Suite.Migrations
         {
             SchemaBuilder.CreateTable(typeof(FacebookCommentsBoxPartRecord).Name, 
                 table => table
-                    .ContentPartRecord()
+                    .SocialPluginPartRecord()
                     .Column<int>("NumberOfPosts")
-                    .Column<int>("Width")
-                    .Column<string>("ColorScheme")
             );
 
             ContentDefinitionManager.AlterPartDefinition(typeof(FacebookCommentsBoxPart).Name,

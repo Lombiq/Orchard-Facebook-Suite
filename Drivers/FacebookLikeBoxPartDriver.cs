@@ -16,15 +16,7 @@ namespace Piedone.Facebook.Suite.Drivers
         protected override DriverResult Display(FacebookLikeBoxPart part, string displayType, dynamic shapeHelper)
         {
             return ContentShape("Parts_FacebookLikeBox",
-                () => shapeHelper.Parts_FacebookLikeBox(
-                                                PageUrl: part.PageUrl,
-                                                NumberOfPosts: part.PageUrl,
-                                                Width: part.Width,
-                                                ColorScheme: part.ColorScheme,
-                                                ShowFaces: part.ShowFaces,
-                                                BorderColor: part.BorderColor,
-                                                ShowStream: part.ShowStream,
-                                                ShowHeader: part.ShowHeader));
+                () => shapeHelper.Parts_FacebookLikeBox());
         }
 
         // GET
