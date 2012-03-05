@@ -1,4 +1,6 @@
 ﻿@using Orchard.Utility.Extensions;
-@*For Request.ToUrlString()*@
-<div class="fb-comments" data-href="@ViewContext.RequestContext.HttpContext.Request.ToUrlString()" data-num-posts="@Model.NumberOfPosts" data-width="@Model.Width" data-colorscheme="@Model.ColorScheme">
+@{
+    var commentsBox = (Piedone.Facebook.Suite.Models.FacebookCommentsBoxPart)Model.ContentPart;
+}
+<div class="fb-comments" data-href="@ViewContext.RequestContext.HttpContext.Request.ToUrlString()" data-num-posts="@commentsBox.NumberOfPosts" data-width="@commentsBox.Width" data-colorscheme="@commentsBox.ColorScheme">
 </div>

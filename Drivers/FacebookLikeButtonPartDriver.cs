@@ -16,14 +16,7 @@ namespace Piedone.Facebook.Suite.Drivers
         protected override DriverResult Display(FacebookLikeButtonPart part, string displayType, dynamic shapeHelper)
         {
             return ContentShape("Parts_FacebookLikeButton",
-                () => shapeHelper.Parts_FacebookLikeButton(
-                                                EnableSendButton: part.EnableSendButton,
-                                                LayoutStyle: part.LayoutStyle,
-                                                Width: part.Width,
-                                                ShowFaces: part.ShowFaces,
-                                                VerbToDisplay: part.VerbToDisplay,
-                                                ColorScheme: part.ColorScheme,
-                                                Font: part.Font));
+                () => shapeHelper.Parts_FacebookLikeButton());
         }
 
         // GET

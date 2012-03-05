@@ -16,11 +16,7 @@ namespace Piedone.Facebook.Suite.Drivers
         protected override DriverResult Display(FacebookFacepilePart part, string displayType, dynamic shapeHelper)
         {
             return ContentShape("Parts_FacebookFacepile",
-                () => shapeHelper.Parts_FacebookFacepile(
-                                                Width: part.Width,
-                                                ColorScheme: part.ColorScheme,
-                                                MaxRows: part.MaxRows,
-                                                Size: part.Size));
+                () => shapeHelper.Parts_FacebookFacepile());
         }
 
         // GET

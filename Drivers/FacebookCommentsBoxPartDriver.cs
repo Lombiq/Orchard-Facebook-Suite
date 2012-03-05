@@ -16,10 +16,7 @@ namespace Piedone.Facebook.Suite.Drivers
         protected override DriverResult Display(FacebookCommentsBoxPart part, string displayType, dynamic shapeHelper)
         {
             return ContentShape("Parts_FacebookCommentsBox",
-                () => shapeHelper.Parts_FacebookCommentsBox(
-                                                NumberOfPosts: part.NumberOfPosts,
-                                                Width: part.Width,
-                                                ColorScheme: part.ColorScheme));
+                () => shapeHelper.Parts_FacebookCommentsBox());
         }
 
         // GET
