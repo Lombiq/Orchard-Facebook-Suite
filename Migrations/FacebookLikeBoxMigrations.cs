@@ -22,9 +22,6 @@ namespace Piedone.Facebook.Suite.Migrations
                     .Column<bool>("ShowHeader")
             );
 
-            ContentDefinitionManager.AlterPartDefinition(typeof(FacebookLikeBoxPart).Name,
-                builder => builder.Attachable());
-
             ContentDefinitionManager.AlterTypeDefinition("FacebookLikeBoxWidget", 
                 cfg => cfg
                     .WithPart(typeof(FacebookLikeBoxPart).Name)
@@ -34,7 +31,7 @@ namespace Piedone.Facebook.Suite.Migrations
             );
 
 
-            return 2;
+            return 3;
         }
 
         public int UpdateFrom1()
@@ -44,6 +41,14 @@ namespace Piedone.Facebook.Suite.Migrations
                     .AddColumn<int>("Height"));
 
             return 2;
+        }
+
+        public int UpdateFrom2()
+        {
+            ContentDefinitionManager.AlterPartDefinition(typeof(FacebookLikeBoxPart).Name,
+                builder => builder.Attachable(false));
+
+            return 3;
         }
     }
 }

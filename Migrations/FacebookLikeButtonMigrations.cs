@@ -24,10 +24,6 @@ namespace Piedone.Facebook.Suite.Migrations
                     .Column<string>("Font")
             );
 
-
-            ContentDefinitionManager.AlterPartDefinition(typeof(FacebookLikeButtonPart).Name,
-                builder => builder.Attachable());
-
             ContentDefinitionManager.AlterTypeDefinition("FacebookLikeButtonWidget", 
                 cfg => cfg
                     .WithPart(typeof(FacebookLikeButtonPart).Name)
@@ -37,7 +33,15 @@ namespace Piedone.Facebook.Suite.Migrations
             );
 
 
-            return 1;
+            return 2;
+        }
+
+        public int UpdateFrom1()
+        {
+            ContentDefinitionManager.AlterPartDefinition(typeof(FacebookLikeButtonPart).Name,
+                builder => builder.Attachable(false));
+
+            return 2;
         }
     }
 }

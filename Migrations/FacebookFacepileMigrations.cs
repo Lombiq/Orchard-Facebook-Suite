@@ -19,9 +19,6 @@ namespace Piedone.Facebook.Suite.Migrations
                     .Column<string>("Size")
             );
 
-            ContentDefinitionManager.AlterPartDefinition(typeof(FacebookFacepilePart).Name,
-                builder => builder.Attachable());
-
             ContentDefinitionManager.AlterTypeDefinition("FacebookFacepileWidget", 
                 cfg => cfg
                     .WithPart(typeof(FacebookFacepilePart).Name)
@@ -31,7 +28,15 @@ namespace Piedone.Facebook.Suite.Migrations
             );
 
 
-            return 1;
+            return 2;
+        }
+
+        public int UpdateFrom1()
+        {
+            ContentDefinitionManager.AlterPartDefinition(typeof(FacebookFacepilePart).Name,
+                builder => builder.Attachable(false));
+
+            return 2;
         }
     }
 }

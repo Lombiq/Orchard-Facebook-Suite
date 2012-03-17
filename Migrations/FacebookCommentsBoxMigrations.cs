@@ -17,9 +17,6 @@ namespace Piedone.Facebook.Suite.Migrations
                     .Column<int>("NumberOfPosts")
             );
 
-            ContentDefinitionManager.AlterPartDefinition(typeof(FacebookCommentsBoxPart).Name,
-                builder => builder.Attachable());
-
             ContentDefinitionManager.AlterTypeDefinition("FacebookCommentsBoxWidget", 
                 cfg => cfg
                     .WithPart(typeof(FacebookCommentsBoxPart).Name)
@@ -29,7 +26,15 @@ namespace Piedone.Facebook.Suite.Migrations
             );
 
 
-            return 1;
+            return 2;
+        }
+
+        public int UpdateFrom1()
+        {
+            ContentDefinitionManager.AlterPartDefinition(typeof(FacebookCommentsBoxPart).Name,
+                builder => builder.Attachable(false));
+
+            return 2;
         }
     }
 }
