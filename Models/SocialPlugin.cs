@@ -23,7 +23,8 @@ namespace Piedone.Facebook.Suite.Models
     /// Base class for social plugin settings parts
     /// </summary>
     /// <typeparam name="TSocialPluginPartRecord">A child of SocialPluginPartRecord</typeparam>
-    public abstract class SocialPluginPart<TRecord> : ContentPart<TRecord> where TRecord : SocialPluginPartRecord
+    public abstract class SocialPluginPart<TRecord> : ContentPart<TRecord>
+        where TRecord : SocialPluginPartRecord
     {
         [Required]
         public int Width

@@ -82,6 +82,8 @@
     <Compile Include="Drivers\FacebookLikeBoxPartDriver.cs" />
     <Compile Include="Drivers\FacebookLikeButtonPartDriver.cs" />
     <Compile Include="Drivers\FacebookSuiteSettingsPartDriver.cs" />
+    <Compile Include="Drivers\SocialPluginPartDriver.cs" />
+    <Compile Include="Drivers\SocialPluginWithHeightDriver.cs" />
     <Compile Include="Filters\FacebookSuiteFilter.cs" />
     <Compile Include="Handlers\FacebookCommentsBoxPartHandler.cs" />
     <Compile Include="Handlers\FacebookFacepilePartHandler.cs" />

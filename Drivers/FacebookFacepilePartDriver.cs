@@ -2,11 +2,12 @@
 using Orchard.ContentManagement.Drivers;
 using Orchard.Environment.Extensions;
 using Piedone.Facebook.Suite.Models;
+using Orchard.ContentManagement.Handlers;
 
 namespace Piedone.Facebook.Suite.Drivers
 {
     [OrchardFeature("Piedone.Facebook.Suite.Facepile")]
-    public class FacebookFacepilePartDriver : ContentPartDriver<FacebookFacepilePart>
+    public class FacebookFacepilePartDriver : SocialPluginPartDriver<FacebookFacepilePart, FacebookFacepilePartRecord>
     {
         protected override string Prefix
         {
@@ -34,6 +35,20 @@ namespace Piedone.Facebook.Suite.Drivers
         {
             updater.TryUpdateModel(part, Prefix, null, null);
             return Editor(part, shapeHelper);
+        }
+
+        protected override void Exporting(FacebookFacepilePart part, ExportContentContext context)
+        {
+            base.Exporting(part, context);
+            context.Element(part.PartDefinition.Name).SetAttributeValue("MaxRows", part.MaxRows);
+            context.Element(part.PartDefinition.Name).SetAttributeValue("Size", part.Size);
+        }
+
+        protected override void Importing(FacebookFacepilePart part, ImportContentContext context)
+        {
+            base.Importing(part, context);
+            part.MaxRows = int.Parse(context.Attribute(part.PartDefinition.Name, "MaxRows"));
+            part.Size = context.Attribute(part.PartDefinition.Name, "Size");
         }
     }
 }

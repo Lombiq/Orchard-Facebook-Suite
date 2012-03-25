@@ -2,11 +2,12 @@
 using Orchard.ContentManagement.Drivers;
 using Orchard.Environment.Extensions;
 using Piedone.Facebook.Suite.Models;
+using Orchard.ContentManagement.Handlers;
 
 namespace Piedone.Facebook.Suite.Drivers
 {
     [OrchardFeature("Piedone.Facebook.Suite.CommentsBox")]
-    public class FacebookCommentsBoxPartDriver : ContentPartDriver<FacebookCommentsBoxPart>
+    public class FacebookCommentsBoxPartDriver : SocialPluginPartDriver<FacebookCommentsBoxPart, FacebookCommentsBoxPartRecord>
     {
         protected override string Prefix
         {
@@ -34,6 +35,18 @@ namespace Piedone.Facebook.Suite.Drivers
         {
             updater.TryUpdateModel(part, Prefix, null, null);
             return Editor(part, shapeHelper);
+        }
+
+        protected override void Exporting(FacebookCommentsBoxPart part, ExportContentContext context)
+        {
+            base.Exporting(part, context);
+            context.Element(part.PartDefinition.Name).SetAttributeValue("NumberOfPosts", part.NumberOfPosts);
+        }
+
+        protected override void Importing(FacebookCommentsBoxPart part, ImportContentContext context)
+        {
+            base.Importing(part, context);
+            part.NumberOfPosts = int.Parse(context.Attribute(part.PartDefinition.Name, "NumberOfPosts"));
         }
     }
 }

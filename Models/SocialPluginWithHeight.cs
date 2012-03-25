@@ -19,7 +19,8 @@ namespace Piedone.Facebook.Suite.Models
         }
     }
 
-    public abstract class SocialPluginWithHeightPart<TRecord> : SocialPluginPart<TRecord> where TRecord : SocialPluginWithHeightRecord
+    public abstract class SocialPluginWithHeightPart<TRecord> : SocialPluginPart<TRecord>
+        where TRecord : SocialPluginWithHeightRecord
     {
         [Required]
         public int Height
