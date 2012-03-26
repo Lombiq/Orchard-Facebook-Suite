@@ -7,7 +7,7 @@ using Orchard.ContentManagement.Handlers;
 
 namespace Piedone.Facebook.Suite.Drivers
 {
-    public class SocialPluginWithHeightDriver<TSocialPluginPart, TSocialPluginPartRecord> : SocialPluginPartDriver<TSocialPluginPart, TSocialPluginPartRecord>
+    public abstract class SocialPluginWithHeightDriver<TSocialPluginPart, TSocialPluginPartRecord> : SocialPluginPartDriver<TSocialPluginPart, TSocialPluginPartRecord>
         where TSocialPluginPart : SocialPluginWithHeightPart<TSocialPluginPartRecord>, new()
         where TSocialPluginPartRecord : SocialPluginWithHeightRecord
     {

@@ -8,7 +8,7 @@ using Piedone.Facebook.Suite.Models;
 
 namespace Piedone.Facebook.Suite.Drivers
 {
-    public class SocialPluginPartDriver<TSocialPluginPart, TSocialPluginPartRecord> : ContentPartDriver<TSocialPluginPart>
+    public abstract class SocialPluginPartDriver<TSocialPluginPart, TSocialPluginPartRecord> : ContentPartDriver<TSocialPluginPart>
         where TSocialPluginPart : SocialPluginPart<TSocialPluginPartRecord>, new()
         where TSocialPluginPartRecord : SocialPluginPartRecord
     {
