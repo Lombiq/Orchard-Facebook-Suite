@@ -2,7 +2,7 @@ Name: Facebook Suite
 AntiForgery: enabled
 Author: Piedone
 Website: http://facebooksuite.codeplex.com/
-Version: 1.2
+Version: 1.2.1
 OrchardVersion: 1.4
 Description: Provides a variety of Facebook-related features. Uses the Facebook C# SDK (http://csharpsdk.org/).
 Features:
