@@ -24,10 +24,13 @@ namespace Piedone.Facebook.Suite.Handlers
             Filters.Add(StorageFilter.For(repository));
         }
 
-        protected override void GetItemMetadata(GetContentItemMetadataContext context) {
+        protected override void GetItemMetadata(GetContentItemMetadataContext context)
+        {
             if (context.ContentItem.ContentType != "Site")
                 return;
+
             base.GetItemMetadata(context);
+
             var groupInfo = new GroupInfo(T("Facebook Suite")); // Addig a new group to the "Settings" menu.
             groupInfo.Id = "FacebookSuiteSettings";
             context.Metadata.EditorGroupInfo.Add(groupInfo);
