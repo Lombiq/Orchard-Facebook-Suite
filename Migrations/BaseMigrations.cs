@@ -18,14 +18,13 @@ namespace Piedone.Facebook.Suite.Migrations
                     .Column<string>("CancelUrlPath")
                     .Column<string>("CanvasPage")
                     .Column<string>("CanvasUrl")
-                    .Column<bool>("IsSecureConnection")
                     .Column<string>("SecureCanvasUrl")
                     .Column<string>("SiteUrl")
                     .Column<bool>("UseFacebookBeta")
             );
 
 
-            return 2;
+            return 3;
         }
 
         public int UpdateFrom1()
@@ -36,6 +35,16 @@ namespace Piedone.Facebook.Suite.Migrations
                 );
 
             return 2;
+        }
+
+        public int UpdateFrom2()
+        {
+            SchemaBuilder.AlterTable(typeof(FacebookSuiteSettingsPartRecord).Name,
+                table => table
+                    .DropColumn("IsSecureConnection")
+                );
+
+            return 3;
         }
     }
 }

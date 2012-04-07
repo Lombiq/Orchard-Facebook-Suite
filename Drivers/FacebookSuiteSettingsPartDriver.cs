@@ -37,7 +37,6 @@ namespace Piedone.Facebook.Suite.Drivers
             context.Element(part.PartDefinition.Name).SetAttributeValue("CancelUrlPath", part.CancelUrlPath);
             context.Element(part.PartDefinition.Name).SetAttributeValue("CanvasPage", part.CanvasPage);
             context.Element(part.PartDefinition.Name).SetAttributeValue("CanvasUrl", part.CanvasUrl);
-            context.Element(part.PartDefinition.Name).SetAttributeValue("IsSecureConnection", part.IsSecureConnection);
             context.Element(part.PartDefinition.Name).SetAttributeValue("SecureCanvasUrl", part.SecureCanvasUrl);
             context.Element(part.PartDefinition.Name).SetAttributeValue("SiteUrl", part.SiteUrl);
             context.Element(part.PartDefinition.Name).SetAttributeValue("UseFacebookBeta", part.UseFacebookBeta);
@@ -50,7 +49,6 @@ namespace Piedone.Facebook.Suite.Drivers
             part.CancelUrlPath = context.Attribute(part.PartDefinition.Name, "CancelUrlPath");
             part.CanvasPage = context.Attribute(part.PartDefinition.Name, "CanvasPage");
             part.CanvasUrl = context.Attribute(part.PartDefinition.Name, "CanvasUrl");
-            part.IsSecureConnection = bool.Parse(context.Attribute(part.PartDefinition.Name, "IsSecureConnection"));
             part.SecureCanvasUrl = context.Attribute(part.PartDefinition.Name, "SecureCanvasUrl");
             part.SiteUrl = context.Attribute(part.PartDefinition.Name, "SiteUrl");
             part.UseFacebookBeta = bool.Parse(context.Attribute(part.PartDefinition.Name, "UseFacebookBeta"));

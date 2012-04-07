@@ -1,6 +1,6 @@
-﻿using Facebook.Web;
-using Orchard;
+﻿using Orchard;
 using Piedone.Facebook.Suite.Models;
+using Facebook;
 
 namespace Piedone.Facebook.Suite.Services
 {
@@ -10,18 +10,23 @@ namespace Piedone.Facebook.Suite.Services
     public interface IFacebookSuiteService : IDependency
     {
         /// <summary>
-        /// The current FacebookWebContext object
+        /// The current FacebookClient object, filled with settings
         /// </summary>
-        FacebookWebContext FacebookWebContext { get; }
+        FacebookClient Client { get; }
 
         /// <summary>
         /// The Facebook Suite settings
         /// </summary>
-        FacebookSuiteSettingsPart FacebookSuiteSettingsPart { get; }
+        FacebookSuiteSettingsPart SettingsPart { get; }
 
         /// <summary>
         /// Checks if the app settings were properly set
         /// </summary>
         bool AppSettingsSet { get; }
+
+        /// <summary>
+        /// Returns a new FacebookClient to be used with any acess token, but filled with settings from the request context and applicable settings
+        /// </summary>
+        FacebookClient GetNewClient();
     }
 }

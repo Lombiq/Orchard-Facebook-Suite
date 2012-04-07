@@ -39,7 +39,7 @@ namespace Piedone.Facebook.Suite.Filters
 
             if (!_facebookSuiteService.AppSettingsSet) return;
 
-            var settings = _facebookSuiteService.FacebookSuiteSettingsPart;
+            var settings = _facebookSuiteService.SettingsPart;
 
             _resourceManager.Require("script", "FacebookSuite").AtHead(); // As Script.AtHead() is not working in FacebookInit shape
 
@@ -47,7 +47,6 @@ namespace Piedone.Facebook.Suite.Filters
                 0,
                 _shapeFactory.FacebookInit(
                     AppId: settings.AppId,
-                    Session: (_facebookSuiteService.FacebookWebContext.Session != null) ? _facebookSuiteService.FacebookWebContext.Session.Data : "",
                     Culture: _workContextAccessor.GetContext(filterContext).CurrentCulture
                     )
                 );

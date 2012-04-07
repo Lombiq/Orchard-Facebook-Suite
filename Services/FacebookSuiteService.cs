@@ -1,5 +1,4 @@
 ﻿using System;
-using Facebook.Web;
 using Orchard;
 using Orchard.ContentManagement; // For generic ContentManager methods
 using Orchard.Environment.Extensions;
@@ -16,6 +15,49 @@ namespace Piedone.Facebook.Suite.Services
         private readonly ISiteService _siteService;
         private readonly IHttpContextAccessor _httpContextAccessor;
 
+        private FacebookClient _client;
+        public FacebookClient Client
+        {
+            get
+            {
+                if (_client == null)
+                {
+                    if (!AppSettingsSet) return null;
+
+                    _client = new FacebookClient
+                    {
+                        AppId = SettingsPart.AppId,
+                        AppSecret = SettingsPart.AppSecret,
+                        UseFacebookBeta = SettingsPart.UseFacebookBeta,
+                        IsSecureConnection = _httpContextAccessor.Current().Request.IsSecureConnection
+                    };
+                }
+                return _client;
+            }
+        }
+
+        private FacebookSuiteSettingsPart _settingsPart;
+        public FacebookSuiteSettingsPart SettingsPart
+        {
+            get
+            {
+                if (_settingsPart == null)
+                {
+                    _settingsPart = _siteService.GetSiteSettings().As<FacebookSuiteSettingsPart>();
+                }
+                return _settingsPart;
+            }
+        }
+
+        public bool AppSettingsSet
+        {
+            get
+            {
+                return !String.IsNullOrEmpty(SettingsPart.AppId);
+            }
+        }
+
+
         public FacebookSuiteService(
             IHttpContextAccessor httpContextAccessor,
             ISiteService siteService)
@@ -24,45 +66,14 @@ namespace Piedone.Facebook.Suite.Services
             _siteService = siteService;
         }
 
-        private FacebookWebContext _facebookWebContextCache;
-        public FacebookWebContext FacebookWebContext
+
+        public FacebookClient GetNewClient()
         {
-            get
+            return new FacebookClient
             {
-                // Lazy loading the Facebook Web Context
-                if (_facebookWebContextCache == null)
-                {
-                    if (!AppSettingsSet) return null;
-
-                    _facebookWebContextCache = new FacebookWebContext(
-                        FacebookSuiteSettingsPart,
-                        _httpContextAccessor.Current());
-                }
-                return _facebookWebContextCache;
-            }
+                UseFacebookBeta = SettingsPart.UseFacebookBeta,
+                IsSecureConnection = _httpContextAccessor.Current().Request.IsSecureConnection
+            };
         }
-
-        private FacebookSuiteSettingsPart _facebookSuiteSettingsPartCache;
-        public FacebookSuiteSettingsPart FacebookSuiteSettingsPart
-        {
-            get
-            {
-                if (_facebookSuiteSettingsPartCache == null)
-                {
-                    _facebookSuiteSettingsPartCache = _siteService.GetSiteSettings().As<FacebookSuiteSettingsPart>();
-                }
-                return _facebookSuiteSettingsPartCache;
-            }
-        }
-
-
-        public bool AppSettingsSet
-        {
-            get
-            {
-                return !String.IsNullOrEmpty(FacebookSuiteSettingsPart.AppId);
-            }
-        }
-        
     }
 }

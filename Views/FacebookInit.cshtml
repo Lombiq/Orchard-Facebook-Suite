@@ -1,6 +1,8 @@
 ﻿<div id="fb-root">
 </div>
-	
+
 <script type="text/javascript">
-    $.facebookSuite.initialize("@Model.AppId", "@Model.Session", "@Model.Culture");
+$(document).ready(function(){
+    $.facebookSuite.initialize("@Model.AppId", "@Model.Culture");
+});
 </script>
