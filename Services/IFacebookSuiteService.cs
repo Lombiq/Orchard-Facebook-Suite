@@ -12,7 +12,7 @@ namespace Piedone.Facebook.Suite.Services
         /// <summary>
         /// The current FacebookClient object, filled with settings
         /// </summary>
-        FacebookClient Client { get; }
+        FacebookClient ClientForApp { get; }
 
         /// <summary>
         /// The Facebook Suite settings

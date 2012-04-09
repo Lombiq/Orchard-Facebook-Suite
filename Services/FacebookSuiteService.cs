@@ -16,7 +16,7 @@ namespace Piedone.Facebook.Suite.Services
         private readonly IHttpContextAccessor _httpContextAccessor;
 
         private FacebookClient _client;
-        public FacebookClient Client
+        public FacebookClient ClientForApp
         {
             get
             {
