@@ -1,6 +1,13 @@
 ﻿@using Orchard.Utility.Extensions;
 @{
+    var request = ViewContext.RequestContext.HttpContext.Request;
+    var queryParams = HttpUtility.ParseQueryString(request.Url.Query);
+    if (queryParams["fb_comment_id"] != null) 
+    {
+        queryParams.Remove("fb_comment_id");
+    }
+    var commentUrl = request.Url.Scheme + ":/" + request.Url.AbsolutePath + ((queryParams.Count != 0) ? "?" + queryParams : "");
     var commentsBox = (Piedone.Facebook.Suite.Models.FacebookCommentsBoxPart)Model.ContentPart;
 }
-<div class="fb-comments" data-href="@ViewContext.RequestContext.HttpContext.Request.ToUrlString()" data-num-posts="@commentsBox.NumberOfPosts" data-width="@commentsBox.Width" data-colorscheme="@commentsBox.ColorScheme">
+<div class="fb-comments" data-href="@commentUrl" data-num-posts="@commentsBox.NumberOfPosts" data-width="@commentsBox.Width" data-colorscheme="@commentsBox.ColorScheme">
 </div>
