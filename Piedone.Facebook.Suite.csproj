@@ -79,6 +79,7 @@
     <Compile Include="Drivers\FacebookSuiteSettingsPartDriver.cs" />
     <Compile Include="Drivers\SocialPluginPartDriver.cs" />
     <Compile Include="Drivers\SocialPluginWithHeightDriver.cs" />
+    <Compile Include="Filters\FacebookCommentsFilter.cs" />
     <Compile Include="Filters\FacebookSuiteFilter.cs" />
     <Compile Include="Handlers\FacebookCommentsBoxPartHandler.cs" />
     <Compile Include="Handlers\FacebookFacepilePartHandler.cs" />
