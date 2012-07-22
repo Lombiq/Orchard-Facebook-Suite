@@ -37,14 +37,12 @@ namespace Piedone.Facebook.Suite.Filters
             if (!(filterContext.Result is ViewResult))
                 return;
 
-            var settings = _facebookSuiteService.SettingsPart;
-
             _resourceManager.Require("script", "FacebookSuite").AtHead(); // As Script.AtHead() is not working in FacebookInit shape
 
             _workContextAccessor.GetContext(filterContext).Layout.Body.Items.Insert( // Include the shape at the beginning of body
                 0,
                 _shapeFactory.FacebookInit(
-                    AppId: settings.AppId,
+                    AppId: _facebookSuiteService.SettingsPart.AppId,
                     Culture: _workContextAccessor.GetContext(filterContext).CurrentCulture
                     )
                 );
