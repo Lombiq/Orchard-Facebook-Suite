@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Facebook;
 using Orchard.ContentManagement;
 using Orchard.ContentManagement.Records;
 using Orchard.Environment.Extensions;

@@ -1,11 +1,10 @@
 ﻿using System;
-using Orchard;
+using Facebook;
 using Orchard.ContentManagement; // For generic ContentManager methods
 using Orchard.Environment.Extensions;
 using Orchard.Mvc;
-using Piedone.Facebook.Suite.Models;
-using Facebook;
 using Orchard.Settings;
+using Piedone.Facebook.Suite.Models;
 
 namespace Piedone.Facebook.Suite.Services
 {

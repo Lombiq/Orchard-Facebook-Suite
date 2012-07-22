@@ -5,7 +5,6 @@ using Orchard.Environment.Extensions;
 using Orchard.Mvc.Filters;
 using Orchard.UI.Resources;
 using Piedone.Facebook.Suite.Services;
-using Orchard.Localization.Services;
 
 namespace Piedone.Facebook.Suite.Filters
 {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Orchard.Data.Migration.Schema;
+﻿using Orchard.Data.Migration.Schema;
 
 namespace Piedone.Facebook.Suite.Migrations
 {

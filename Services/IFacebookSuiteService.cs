@@ -1,6 +1,6 @@
-﻿using Orchard;
+﻿using Facebook;
+using Orchard;
 using Piedone.Facebook.Suite.Models;
-using Facebook;
 
 namespace Piedone.Facebook.Suite.Services
 {

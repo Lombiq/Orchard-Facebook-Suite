@@ -1,7 +1,7 @@
 ﻿using Orchard.ContentManagement;
 using Orchard.ContentManagement.Drivers;
-using Piedone.Facebook.Suite.Models;
 using Orchard.ContentManagement.Handlers;
+using Piedone.Facebook.Suite.Models;
 
 namespace Piedone.Facebook.Suite.Drivers
 {
