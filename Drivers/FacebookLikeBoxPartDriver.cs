@@ -40,21 +40,27 @@ namespace Piedone.Facebook.Suite.Drivers
         protected override void Exporting(FacebookLikeBoxPart part, ExportContentContext context)
         {
             base.Exporting(part, context);
-            context.Element(part.PartDefinition.Name).SetAttributeValue("PageUrl", part.PageUrl);
-            context.Element(part.PartDefinition.Name).SetAttributeValue("ShowFaces", part.ShowFaces);
-            context.Element(part.PartDefinition.Name).SetAttributeValue("BorderColor", part.BorderColor);
-            context.Element(part.PartDefinition.Name).SetAttributeValue("ShowStream", part.ShowStream);
-            context.Element(part.PartDefinition.Name).SetAttributeValue("ShowHeader", part.ShowHeader);
+
+            var element = context.Element(part.PartDefinition.Name);
+
+            element.SetAttributeValue("PageUrl", part.PageUrl);
+            element.SetAttributeValue("ShowFaces", part.ShowFaces);
+            element.SetAttributeValue("BorderColor", part.BorderColor);
+            element.SetAttributeValue("ShowStream", part.ShowStream);
+            element.SetAttributeValue("ShowHeader", part.ShowHeader);
         }
 
         protected override void Importing(FacebookLikeBoxPart part, ImportContentContext context)
         {
             base.Importing(part, context);
-            part.PageUrl = context.Attribute(part.PartDefinition.Name, "PageUrl");
-            part.ShowFaces = bool.Parse(context.Attribute(part.PartDefinition.Name, "ShowFaces"));
-            part.BorderColor = context.Attribute(part.PartDefinition.Name, "BorderColor");
-            part.ShowStream = bool.Parse(context.Attribute(part.PartDefinition.Name, "ShowStream"));
-            part.ShowHeader = bool.Parse(context.Attribute(part.PartDefinition.Name, "ShowHeader"));
+
+            var partName = part.PartDefinition.Name;
+
+            context.ImportAttribute(partName, "PageUrl", value => part.PageUrl = value);
+            context.ImportAttribute(partName, "ShowFaces", value => part.ShowFaces = bool.Parse(value));
+            context.ImportAttribute(partName, "BorderColor", value => part.BorderColor = value);
+            context.ImportAttribute(partName, "ShowStream", value => part.ShowStream = bool.Parse(value));
+            context.ImportAttribute(partName, "ShowHeader", value => part.ShowHeader = bool.Parse(value));
         }
     }
 }

@@ -40,6 +40,7 @@ namespace Piedone.Facebook.Suite.Drivers
         protected override void Exporting(FacebookLikeButtonPart part, ExportContentContext context)
         {
             base.Exporting(part, context);
+
             context.Element(part.PartDefinition.Name).SetAttributeValue("EnableSendButton", part.EnableSendButton);
             context.Element(part.PartDefinition.Name).SetAttributeValue("LayoutStyle", part.LayoutStyle);
             context.Element(part.PartDefinition.Name).SetAttributeValue("ShowFaces", part.ShowFaces);
@@ -50,11 +51,14 @@ namespace Piedone.Facebook.Suite.Drivers
         protected override void Importing(FacebookLikeButtonPart part, ImportContentContext context)
         {
             base.Importing(part, context);
-            part.EnableSendButton = bool.Parse(context.Attribute(part.PartDefinition.Name, "EnableSendButton"));
-            part.LayoutStyle = context.Attribute(part.PartDefinition.Name, "LayoutStyle");
-            part.ShowFaces = bool.Parse(context.Attribute(part.PartDefinition.Name, "ShowFaces"));
-            part.VerbToDisplay = context.Attribute(part.PartDefinition.Name, "VerbToDisplay");
-            part.Font = context.Attribute(part.PartDefinition.Name, "Font");
+
+            var partName = part.PartDefinition.Name;
+            
+            context.ImportAttribute(partName, "EnableSendButton", value => part.EnableSendButton = bool.Parse(value));
+            context.ImportAttribute(partName, "LayoutStyle", value => part.LayoutStyle = value);
+            context.ImportAttribute(partName, "ShowFaces", value => part.ShowFaces = bool.Parse(value));
+            context.ImportAttribute(partName, "VerbToDisplay", value => part.VerbToDisplay = value);
+            context.ImportAttribute(partName, "Font", value => part.Font = value);
         }
     }
 }

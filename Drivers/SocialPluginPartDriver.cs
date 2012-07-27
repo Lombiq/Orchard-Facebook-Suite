@@ -10,14 +10,18 @@ namespace Piedone.Facebook.Suite.Drivers
     {
         protected override void Exporting(TSocialPluginPart part, ExportContentContext context)
         {
-            context.Element(part.PartDefinition.Name).SetAttributeValue("ColorScheme", part.ColorScheme);
-            context.Element(part.PartDefinition.Name).SetAttributeValue("Width", part.Width);
+            var element = context.Element(part.PartDefinition.Name);
+
+            element.SetAttributeValue("ColorScheme", part.ColorScheme);
+            element.SetAttributeValue("Width", part.Width);
         }
 
         protected override void Importing(TSocialPluginPart part, ImportContentContext context)
         {
-            part.ColorScheme = context.Attribute(part.PartDefinition.Name, "ColorScheme");
-            part.Width = int.Parse(context.Attribute(part.PartDefinition.Name, "Width"));
+            var partName = part.PartDefinition.Name;
+
+            context.ImportAttribute(partName, "ColorScheme", value => part.ColorScheme = value);
+            context.ImportAttribute(partName, "Width", value => part.Width = int.Parse(value));
         }
     }
 }

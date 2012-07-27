@@ -16,7 +16,7 @@ namespace Piedone.Facebook.Suite.Drivers
         protected override void Importing(TSocialPluginPart part, ImportContentContext context)
         {
             base.Importing(part, context);
-            part.Height = int.Parse(context.Attribute(part.PartDefinition.Name, "Height"));
+            context.ImportAttribute(part.PartDefinition.Name, "Height", value => part.Height = int.Parse(value));
         }
     }
 }

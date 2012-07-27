@@ -40,15 +40,21 @@ namespace Piedone.Facebook.Suite.Drivers
         protected override void Exporting(FacebookFacepilePart part, ExportContentContext context)
         {
             base.Exporting(part, context);
-            context.Element(part.PartDefinition.Name).SetAttributeValue("MaxRows", part.MaxRows);
-            context.Element(part.PartDefinition.Name).SetAttributeValue("Size", part.Size);
+
+            var element = context.Element(part.PartDefinition.Name);
+
+            element.SetAttributeValue("MaxRows", part.MaxRows);
+            element.SetAttributeValue("Size", part.Size);
         }
 
         protected override void Importing(FacebookFacepilePart part, ImportContentContext context)
         {
             base.Importing(part, context);
-            part.MaxRows = int.Parse(context.Attribute(part.PartDefinition.Name, "MaxRows"));
-            part.Size = context.Attribute(part.PartDefinition.Name, "Size");
+
+            var partName = part.PartDefinition.Name;
+
+            context.ImportAttribute(partName, "MaxRows", value => part.MaxRows = int.Parse(value));
+            context.ImportAttribute(partName, "Size", value => part.Size = value);
         }
     }
 }

@@ -46,7 +46,7 @@ namespace Piedone.Facebook.Suite.Drivers
         protected override void Importing(FacebookCommentsBoxPart part, ImportContentContext context)
         {
             base.Importing(part, context);
-            part.NumberOfPosts = int.Parse(context.Attribute(part.PartDefinition.Name, "NumberOfPosts"));
+            context.ImportAttribute(part.PartDefinition.Name, "NumberOfPosts", value => part.NumberOfPosts = int.Parse(value));
         }
     }
 }
