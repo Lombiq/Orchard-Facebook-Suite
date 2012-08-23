@@ -18,7 +18,7 @@ namespace Piedone.Facebook.Suite.Models
             LayoutStyle = "standard";
             ShowFaces = false;
             VerbToDisplay = "like";
-            Font = "Arial";
+            Font = "arial";
         }
     }
 

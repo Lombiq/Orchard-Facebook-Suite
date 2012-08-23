@@ -37,12 +37,12 @@
             <label for="Font">@T("Font")</label>
             @Html.DropDownListFor(model => model.Font,
             new SelectList(new[] { 
-                new SelectListItem { Text = "Arial", Value = "Arial" }, 
-                new SelectListItem { Text = "Lucida Grande", Value = "Lucida Grande" }, 
-                new SelectListItem { Text = "Segoe Ui", Value = "Segoe Ui" }, 
-                new SelectListItem { Text = "Tahoma", Value = "Tahoma" }, 
-                new SelectListItem { Text = "Trebuchet MS", Value = "Trebuchet MS" }, 
-                new SelectListItem { Text = "Verdana", Value = "Verdana" } 
+                new SelectListItem { Value = "Arial", Text = "arial" }, 
+                new SelectListItem { Value = "Lucida Grande", Text = "lucida grande" }, 
+                new SelectListItem { Value = "Segoe Ui", Text = "segoe ui" }, 
+                new SelectListItem { Value = "Tahoma", Text = "tahoma" }, 
+                new SelectListItem { Value = "Trebuchet MS", Text = "trebuchet ms" }, 
+                new SelectListItem { Value = "Verdana", Text = "verdana" } 
             }, "Text", "Value"))
             @Html.ValidationMessageFor(model => model.Font)
         </li>
