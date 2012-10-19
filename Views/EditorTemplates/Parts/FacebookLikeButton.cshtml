@@ -8,14 +8,14 @@
             @Html.ValidationMessageFor(m => m.EnableSendButton)
         </li>
         <li>
-            <label for="LayoutStyle">@T("Layout style")</label>
-            @Html.DropDownListFor(model => model.LayoutStyle,
+            @Html.LabelFor(m => m.LayoutStyle, T("Layout style"))
+            @Html.DropDownListFor(m => m.LayoutStyle,
             new SelectList(new[] { 
                 new SelectListItem { Text = "standard", Value = "standard" }, 
                 new SelectListItem { Text = "button_count", Value = "button_count" }, 
                 new SelectListItem { Text = "box_count", Value = "box_count" } 
             }, "Text", "Value"))
-            @Html.ValidationMessageFor(model => model.LayoutStyle)
+            @Html.ValidationMessageFor(m => m.LayoutStyle)
         </li>
         <li>
             @Display.WidthEditor(Value: Model.Width)
@@ -26,16 +26,16 @@
             @Html.ValidationMessageFor(m => m.ShowFaces)
         </li>
         <li>
-            <label for="VerbToDisplay">@T("Verb to display")</label>
-            @Html.DropDownListFor(model => model.VerbToDisplay, new SelectList(new[] { new SelectListItem { Text = "like", Value = "like" }, new SelectListItem { Text = "recommend", Value = "recommend" } }, "Text", "Value"))
-            @Html.ValidationMessageFor(model => model.VerbToDisplay)
+            @Html.LabelFor(m => m.VerbToDisplay, T("Verb to display"))
+            @Html.DropDownListFor(m => m.VerbToDisplay, new SelectList(new[] { new SelectListItem { Text = "like", Value = "like" }, new SelectListItem { Text = "recommend", Value = "recommend" } }, "Text", "Value"))
+            @Html.ValidationMessageFor(m => m.VerbToDisplay)
         </li>
         <li>
             @Display.ColorSchemeSelector(Selected: Model.ColorScheme)
         </li>
         <li>
-            <label for="Font">@T("Font")</label>
-            @Html.DropDownListFor(model => model.Font,
+            @Html.LabelFor(m => m.Font, T("Font"))
+            @Html.DropDownListFor(m => m.Font,
             new SelectList(new[] { 
                 new SelectListItem { Value = "Arial", Text = "arial" }, 
                 new SelectListItem { Value = "Lucida Grande", Text = "lucida grande" }, 
@@ -44,7 +44,7 @@
                 new SelectListItem { Value = "Trebuchet MS", Text = "trebuchet ms" }, 
                 new SelectListItem { Value = "Verdana", Text = "verdana" } 
             }, "Text", "Value"))
-            @Html.ValidationMessageFor(model => model.Font)
+            @Html.ValidationMessageFor(m => m.Font)
         </li>
     </ol>
 </fieldset>
