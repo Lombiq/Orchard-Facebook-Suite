@@ -14,7 +14,7 @@
                 new SelectListItem { Text = "standard", Value = "standard" }, 
                 new SelectListItem { Text = "button_count", Value = "button_count" }, 
                 new SelectListItem { Text = "box_count", Value = "box_count" } 
-            }, "Text", "Value"))
+            }, "Value", "Text"))
             @Html.ValidationMessageFor(m => m.LayoutStyle)
         </li>
         <li>
@@ -27,7 +27,7 @@
         </li>
         <li>
             @Html.LabelFor(m => m.VerbToDisplay, T("Verb to display"))
-            @Html.DropDownListFor(m => m.VerbToDisplay, new SelectList(new[] { new SelectListItem { Text = "like", Value = "like" }, new SelectListItem { Text = "recommend", Value = "recommend" } }, "Text", "Value"))
+            @Html.DropDownListFor(m => m.VerbToDisplay, new SelectList(new[] { new SelectListItem { Text = "like", Value = "like" }, new SelectListItem { Text = "recommend", Value = "recommend" } }, "Value", "Text"))
             @Html.ValidationMessageFor(m => m.VerbToDisplay)
         </li>
         <li>
@@ -36,14 +36,14 @@
         <li>
             @Html.LabelFor(m => m.Font, T("Font"))
             @Html.DropDownListFor(m => m.Font,
-            new SelectList(new[] { 
-                new SelectListItem { Value = "Arial", Text = "arial" }, 
-                new SelectListItem { Value = "Lucida Grande", Text = "lucida grande" }, 
-                new SelectListItem { Value = "Segoe Ui", Text = "segoe ui" }, 
-                new SelectListItem { Value = "Tahoma", Text = "tahoma" }, 
-                new SelectListItem { Value = "Trebuchet MS", Text = "trebuchet ms" }, 
-                new SelectListItem { Value = "Verdana", Text = "verdana" } 
-            }, "Text", "Value"))
+                new SelectList(new[] { 
+                    new SelectListItem { Text = "Arial", Value = "arial" }, 
+                    new SelectListItem { Text = "Lucida Grande", Value = "lucida grande" }, 
+                    new SelectListItem { Text = "Segoe Ui", Value = "segoe ui" }, 
+                    new SelectListItem { Text = "Tahoma", Value = "tahoma" }, 
+                    new SelectListItem { Text = "Trebuchet MS", Value = "trebuchet ms" }, 
+                    new SelectListItem { Text = "Verdana", Value = "verdana" } 
+                }, "Value", "Text"))
             @Html.ValidationMessageFor(m => m.Font)
         </li>
     </ol>
