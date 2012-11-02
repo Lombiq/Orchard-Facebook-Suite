@@ -1,5 +1,5 @@
 ﻿@{
     var likeButton = (Piedone.Facebook.Suite.Models.FacebookLikeButtonPart)Model.ContentPart;
 }
-<div class="fb-like" data-send="@likeButton.EnableSendButton" data-layout="@likeButton.LayoutStyle" data-width="@likeButton.Width" data-show-faces="@likeButton.ShowFaces" data-action="@likeButton.VerbToDisplay" data-colorscheme="@likeButton.ColorScheme" data-font="@likeButton.Font">
+<div class="fb-like" data-send="@likeButton.EnableSendButton.ToString().ToLower()" data-layout="@likeButton.LayoutStyle" data-width="@likeButton.Width" data-show-faces="@likeButton.ShowFaces.ToString().ToLower()" data-action="@likeButton.VerbToDisplay" data-colorscheme="@likeButton.ColorScheme" data-font="@likeButton.Font">
 </div>

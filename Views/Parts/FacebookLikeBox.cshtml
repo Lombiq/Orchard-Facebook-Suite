@@ -1,5 +1,5 @@
 ﻿@{
     var likeBox = (Piedone.Facebook.Suite.Models.FacebookLikeBoxPart)Model.ContentPart;
 }
-<div class="fb-like-box" data-href="@likeBox.PageUrl" data-width="@likeBox.Width"  data-height="@likeBox.Height" data-colorscheme="@likeBox.ColorScheme" data-show-faces="@likeBox.ShowFaces" data-border-color="@likeBox.BorderColor" data-stream="@likeBox.ShowStream" data-header="@likeBox.ShowHeader">
+<div class="fb-like-box" data-href="@likeBox.PageUrl" data-width="@likeBox.Width"  data-height="@likeBox.Height" data-colorscheme="@likeBox.ColorScheme" data-show-faces="@likeBox.ShowFaces.ToString().ToLower()" data-border-color="@likeBox.BorderColor" data-stream="@likeBox.ShowStream.ToString().ToLower()" data-header="@likeBox.ShowHeader.ToString().ToLower()">
 </div>
