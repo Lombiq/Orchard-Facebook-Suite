@@ -9,7 +9,7 @@ namespace Piedone.Facebook.Suite
         public void BuildManifests(ResourceManifestBuilder builder)
         {
             var manifest = builder.Add();
-            manifest.DefineScript("FacebookSuite").SetUrl("FacebookSuite.js").SetDependencies("jQuery");
+            manifest.DefineScript("FacebookSuite").SetUrl("piedone-facebook-suite.js").SetDependencies("jQuery");
         }
     }
 }
