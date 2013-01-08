@@ -36,7 +36,7 @@ namespace Piedone.Facebook.Suite.Filters
             if (!(filterContext.Result is ViewResult))
                 return;
 
-            _resourceManager.Require("script", "FacebookSuite").AtHead(); // As Script.AtHead() is not working in FacebookInit shape
+            _resourceManager.Require("script", "FacebookSuite").AtFoot();
 
             _workContextAccessor.GetContext(filterContext).Layout.Body.Items.Insert( // Include the shape at the beginning of body
                 0,
