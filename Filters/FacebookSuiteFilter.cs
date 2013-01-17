@@ -33,8 +33,10 @@ namespace Piedone.Facebook.Suite.Filters
         public void OnResultExecuting(ResultExecutingContext filterContext)
         {
             // Should only run on a full view rendering result
-            if (!(filterContext.Result is ViewResult))
-                return;
+            if (!(filterContext.Result is ViewResult)) return;
+
+            // Don't run if we're on the admin
+            if (Orchard.UI.Admin.AdminFilter.IsApplied(filterContext.RequestContext)) return;
 
             _resourceManager.Require("script", "FacebookSuite").AtFoot();
 
