@@ -1,4 +1,8 @@
-﻿<div id="fb-root">
+﻿@{
+    Script.Require("jQuery").AtFoot(); // This should be included by the FacebookSuite script already, but just in case.
+}
+
+<div id="fb-root">
 </div>
 
 @using (Script.Foot()) {
