@@ -15,7 +15,7 @@ namespace Piedone.Facebook.Suite.Migrations
                 table => table
                     .SocialPluginPartRecord()
                     .Column<int>("NumberOfPosts")
-            );
+                );
 
             ContentDefinitionManager.AlterTypeDefinition("FacebookCommentsBoxWidget", 
                 cfg => cfg
@@ -23,7 +23,7 @@ namespace Piedone.Facebook.Suite.Migrations
                     .WithPart("WidgetPart")
                     .WithPart("CommonPart")
                     .WithSetting("Stereotype", "Widget")
-            );
+                );
 
 
             return 2;

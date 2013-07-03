@@ -30,7 +30,7 @@ namespace Piedone.Facebook.Suite.Migrations
                     .Column<string>("VerbToDisplay")
                     .Column<string>("ColorScheme")
                     .Column<string>("Font")
-            );
+                );
 
             ContentDefinitionManager.AlterTypeDefinition("FacebookLikeButtonWidget", 
                 cfg => cfg
@@ -38,7 +38,7 @@ namespace Piedone.Facebook.Suite.Migrations
                     .WithPart("WidgetPart")
                     .WithPart("CommonPart")
                     .WithSetting("Stereotype", "Widget")
-            );
+                );
 
 
             return 3;

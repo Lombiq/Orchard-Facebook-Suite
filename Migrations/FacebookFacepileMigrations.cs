@@ -17,7 +17,7 @@ namespace Piedone.Facebook.Suite.Migrations
                     .SocialPluginPartRecord()
                     .Column<int>("MaxRows")
                     .Column<string>("Size")
-            );
+                );
 
             ContentDefinitionManager.AlterTypeDefinition("FacebookFacepileWidget", 
                 cfg => cfg
@@ -25,7 +25,7 @@ namespace Piedone.Facebook.Suite.Migrations
                     .WithPart("WidgetPart")
                     .WithPart("CommonPart")
                     .WithSetting("Stereotype", "Widget")
-            );
+                );
 
 
             return 2;

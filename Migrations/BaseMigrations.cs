@@ -21,7 +21,7 @@ namespace Piedone.Facebook.Suite.Migrations
                     .Column<string>("SecureCanvasUrl")
                     .Column<string>("SiteUrl")
                     .Column<bool>("UseFacebookBeta")
-            );
+                );
 
 
             return 3;

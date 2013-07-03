@@ -20,7 +20,7 @@ namespace Piedone.Facebook.Suite.Migrations
                     .Column<string>("BorderColor")
                     .Column<bool>("ShowStream")
                     .Column<bool>("ShowHeader")
-            );
+                );
 
             ContentDefinitionManager.AlterTypeDefinition("FacebookLikeBoxWidget", 
                 cfg => cfg
@@ -28,7 +28,7 @@ namespace Piedone.Facebook.Suite.Migrations
                     .WithPart("WidgetPart")
                     .WithPart("CommonPart")
                     .WithSetting("Stereotype", "Widget")
-            );
+                );
 
 
             return 3;
