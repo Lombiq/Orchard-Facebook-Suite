@@ -4,7 +4,7 @@
     <ol>
         <li>
             @Html.LabelFor(model => model.NumberOfPosts, T("Number of posts"))
-            @Html.TextBoxFor(model => model.NumberOfPosts, new { @class = "text text-small" })
+            @Html.TextBoxFor(model => model.NumberOfPosts, new { @class = "text small" })
             @Html.ValidationMessageFor(model => model.NumberOfPosts)
         </li>
         <li>
