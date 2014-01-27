@@ -76,7 +76,6 @@
   <ItemGroup>
     <Content Include="Scripts\piedone-facebook-suite.js" />
     <Content Include="Scripts\Web.config" />
-    <Content Include="Styles\Web.config" />
     <Content Include="Properties\AssemblyInfo.cs" />
     <Content Include="Module.txt" />
   </ItemGroup>
@@ -147,9 +146,7 @@
       <Name>Orchard.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Views\HeightEditor.cshtml" />
   </ItemGroup>
