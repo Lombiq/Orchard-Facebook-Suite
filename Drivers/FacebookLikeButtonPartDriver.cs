@@ -36,29 +36,5 @@ namespace Piedone.Facebook.Suite.Drivers
             updater.TryUpdateModel(part, Prefix, null, null);
             return Editor(part, shapeHelper);
         }
-
-        protected override void Exporting(FacebookLikeButtonPart part, ExportContentContext context)
-        {
-            base.Exporting(part, context);
-
-            context.Element(part.PartDefinition.Name).SetAttributeValue("EnableSendButton", part.EnableSendButton);
-            context.Element(part.PartDefinition.Name).SetAttributeValue("LayoutStyle", part.LayoutStyle);
-            context.Element(part.PartDefinition.Name).SetAttributeValue("ShowFaces", part.ShowFaces);
-            context.Element(part.PartDefinition.Name).SetAttributeValue("VerbToDisplay", part.VerbToDisplay);
-            context.Element(part.PartDefinition.Name).SetAttributeValue("Font", part.Font);
-        }
-
-        protected override void Importing(FacebookLikeButtonPart part, ImportContentContext context)
-        {
-            base.Importing(part, context);
-
-            var partName = part.PartDefinition.Name;
-            
-            context.ImportAttribute(partName, "EnableSendButton", value => part.EnableSendButton = bool.Parse(value));
-            context.ImportAttribute(partName, "LayoutStyle", value => part.LayoutStyle = value);
-            context.ImportAttribute(partName, "ShowFaces", value => part.ShowFaces = bool.Parse(value));
-            context.ImportAttribute(partName, "VerbToDisplay", value => part.VerbToDisplay = value);
-            context.ImportAttribute(partName, "Font", value => part.Font = value);
-        }
     }
 }

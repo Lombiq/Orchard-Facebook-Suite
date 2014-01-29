@@ -8,20 +8,5 @@ namespace Piedone.Facebook.Suite.Drivers
         where TSocialPluginPart : SocialPluginPart<TSocialPluginPartRecord>, new()
         where TSocialPluginPartRecord : SocialPluginPartRecord
     {
-        protected override void Exporting(TSocialPluginPart part, ExportContentContext context)
-        {
-            var element = context.Element(part.PartDefinition.Name);
-
-            element.SetAttributeValue("ColorScheme", part.ColorScheme);
-            element.SetAttributeValue("Width", part.Width);
-        }
-
-        protected override void Importing(TSocialPluginPart part, ImportContentContext context)
-        {
-            var partName = part.PartDefinition.Name;
-
-            context.ImportAttribute(partName, "ColorScheme", value => part.ColorScheme = value);
-            context.ImportAttribute(partName, "Width", value => part.Width = int.Parse(value));
-        }
     }
 }

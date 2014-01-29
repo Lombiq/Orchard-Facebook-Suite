@@ -19,6 +19,7 @@ namespace Piedone.Facebook.Suite.Models
         }
     }
 
+
     /// <summary>
     /// Base class for social plugin settings parts
     /// </summary>
@@ -29,15 +30,15 @@ namespace Piedone.Facebook.Suite.Models
         [Required]
         public int Width
         {
-            get { return Record.Width; }
-            set { Record.Width = value; }
+            get { return Retrieve(x => x.Width); }
+            set { Store(x => x.Width, value); }
         }
 
         [Required]
         public string ColorScheme
         {
-            get { return Record.ColorScheme; }
-            set { Record.ColorScheme = value; }
+            get { return Retrieve(x => x.ColorScheme); }
+            set { Store(x => x.ColorScheme, value); }
         }
     }
 }

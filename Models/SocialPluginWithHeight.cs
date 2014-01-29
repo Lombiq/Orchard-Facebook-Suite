@@ -15,14 +15,15 @@ namespace Piedone.Facebook.Suite.Models
         }
     }
 
+
     public abstract class SocialPluginWithHeightPart<TRecord> : SocialPluginPart<TRecord>
         where TRecord : SocialPluginWithHeightRecord
     {
         [Required]
         public int Height
         {
-            get { return Record.Height; }
-            set { Record.Height = value; }
+            get { return Retrieve(x => x.Height); }
+            set { Store(x => x.Height, value); }
         }
     }
 }

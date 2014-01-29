@@ -27,36 +27,36 @@ namespace Piedone.Facebook.Suite.Models
         [Required]
         public string PageUrl
         {
-            get { return Record.PageUrl; }
-            set { Record.PageUrl = value; }
+            get { return Retrieve(x => x.PageUrl); }
+            set { Store(x => x.PageUrl, value); }
         }
 
         [Required]
         public bool ShowFaces
         {
-            get { return Record.ShowFaces; }
-            set { Record.ShowFaces = value; }
+            get { return Retrieve(x => x.ShowFaces); }
+            set { Store(x => x.ShowFaces, value); }
         }
 
         [Required]
         public string BorderColor
         {
-            get { return Record.BorderColor; }
-            set { Record.BorderColor = value; }
+            get { return Retrieve(x => x.BorderColor); }
+            set { Store(x => x.BorderColor, value); }
         }
 
         [Required]
         public bool ShowStream
         {
-            get { return Record.ShowStream; }
-            set { Record.ShowStream = value; }
+            get { return Retrieve(x => x.ShowStream); }
+            set { Store(x => x.ShowStream, value); }
         }
 
         [Required]
         public bool ShowHeader
         {
-            get { return Record.ShowHeader; }
-            set { Record.ShowHeader = value; }
+            get { return Retrieve(x => x.ShowHeader); }
+            set { Store(x => x.ShowHeader, value); }
         }
     }
 }

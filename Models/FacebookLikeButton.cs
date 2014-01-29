@@ -22,42 +22,43 @@ namespace Piedone.Facebook.Suite.Models
         }
     }
 
+
     [OrchardFeature("Piedone.Facebook.Suite.LikeButton")]
     public class FacebookLikeButtonPart : SocialPluginPart<FacebookLikeButtonPartRecord>
     {
         [Required]
         public bool EnableSendButton
         {
-            get { return Record.EnableSendButton; }
-            set { Record.EnableSendButton = value; }
+            get { return Retrieve(x => x.EnableSendButton); }
+            set { Store(x => x.EnableSendButton, value); }
         }
 
         [Required]
         public string LayoutStyle
         {
-            get { return Record.LayoutStyle; }
-            set { Record.LayoutStyle = value; }
+            get { return Retrieve(x => x.LayoutStyle); }
+            set { Store(x => x.LayoutStyle, value); }
         }
 
         [Required]
         public bool ShowFaces
         {
-            get { return Record.ShowFaces; }
-            set { Record.ShowFaces = value; }
+            get { return Retrieve(x => x.ShowFaces); }
+            set { Store(x => x.ShowFaces, value); }
         }
 
         [Required]
         public string VerbToDisplay
         {
-            get { return Record.VerbToDisplay; }
-            set { Record.VerbToDisplay = value; }
+            get { return Retrieve(x => x.VerbToDisplay); }
+            set { Store(x => x.VerbToDisplay, value); }
         }
 
         [Required]
         public string Font
         {
-            get { return Record.Font; }
-            set { Record.Font = value; }
+            get { return Retrieve(x => x.Font); }
+            set { Store(x => x.Font, value); }
         }
     }
 }

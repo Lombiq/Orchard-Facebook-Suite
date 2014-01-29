@@ -22,15 +22,15 @@ namespace Piedone.Facebook.Suite.Models
         [Required]
         public int MaxRows
         {
-            get { return Record.MaxRows; }
-            set { Record.MaxRows = value; }
+            get { return Retrieve(x => x.MaxRows); }
+            set { Store(x => x.MaxRows, value); }
         }
 
         [Required]
         public string Size
         {
-            get { return Record.Size; }
-            set { Record.Size = value; }
+            get { return Retrieve(x => x.Size); }
+            set { Store(x => x.Size, value); }
         }
     }
 }

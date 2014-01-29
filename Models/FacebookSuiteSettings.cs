@@ -18,57 +18,58 @@ namespace Piedone.Facebook.Suite.Models
         public virtual bool UseFacebookBeta { get; set; }
     }
 
+
     [OrchardFeature("Piedone.Facebook.Suite")]
     public class FacebookSuiteSettingsPart : ContentPart<FacebookSuiteSettingsPartRecord>
     {
         [Required]
         public string AppId
         {
-            get { return Record.AppId; }
-            set { Record.AppId = value; }
+            get { return Retrieve(x => x.AppId); }
+            set { Store(x => x.AppId, value); }
         }
 
         [Required]
         public string AppSecret
         {
-            get { return Record.AppSecret; }
-            set { Record.AppSecret = value; }
+            get { return Retrieve(x => x.AppSecret); }
+            set { Store(x => x.AppSecret, value); }
         }
 
         public string CancelUrlPath
         {
-            get { return Record.CancelUrlPath; }
-            set { Record.CancelUrlPath = value; }
+            get { return Retrieve(x => x.CancelUrlPath); }
+            set { Store(x => x.CancelUrlPath, value); }
         }
 
         public string CanvasPage
         {
-            get { return Record.CanvasPage; }
-            set { Record.CanvasPage = value; }
+            get { return Retrieve(x => x.CanvasPage); }
+            set { Store(x => x.CanvasPage, value); }
         }
 
         public string CanvasUrl
         {
-            get { return Record.CanvasUrl; }
-            set { Record.CanvasUrl = value; }
+            get { return Retrieve(x => x.CanvasUrl); }
+            set { Store(x => x.CanvasUrl, value); }
         }
 
         public string SecureCanvasUrl
         {
-            get { return Record.SecureCanvasUrl; }
-            set { Record.SecureCanvasUrl = value; }
+            get { return Retrieve(x => x.SecureCanvasUrl); }
+            set { Store(x => x.SecureCanvasUrl, value); }
         }
 
         public string SiteUrl
         {
-            get { return Record.SiteUrl; }
-            set { Record.SiteUrl = value; }
+            get { return Retrieve(x => x.SiteUrl); }
+            set { Store(x => x.SiteUrl, value); }
         }
 
         public bool UseFacebookBeta
         {
-            get { return Record.UseFacebookBeta; }
-            set { Record.UseFacebookBeta = value; }
+            get { return Retrieve(x => x.UseFacebookBeta); }
+            set { Store(x => x.UseFacebookBeta, value); }
         }
     }
 

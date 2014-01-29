@@ -36,17 +36,5 @@ namespace Piedone.Facebook.Suite.Drivers
             updater.TryUpdateModel(part, Prefix, null, null);
             return Editor(part, shapeHelper);
         }
-
-        protected override void Exporting(FacebookCommentsBoxPart part, ExportContentContext context)
-        {
-            base.Exporting(part, context);
-            context.Element(part.PartDefinition.Name).SetAttributeValue("NumberOfPosts", part.NumberOfPosts);
-        }
-
-        protected override void Importing(FacebookCommentsBoxPart part, ImportContentContext context)
-        {
-            base.Importing(part, context);
-            context.ImportAttribute(part.PartDefinition.Name, "NumberOfPosts", value => part.NumberOfPosts = int.Parse(value));
-        }
     }
 }

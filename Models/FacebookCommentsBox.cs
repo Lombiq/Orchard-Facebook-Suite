@@ -14,14 +14,15 @@ namespace Piedone.Facebook.Suite.Models
         }
     }
 
+
     [OrchardFeature("Piedone.Facebook.Suite.CommentsBox")]
     public class FacebookCommentsBoxPart : SocialPluginPart<FacebookCommentsBoxPartRecord>
     {
         [Required]
         public int NumberOfPosts
         {
-            get { return Record.NumberOfPosts; }
-            set { Record.NumberOfPosts = value; }
+            get { return Retrieve(x => x.NumberOfPosts); }
+            set { Store(x => x.NumberOfPosts, value); }
         }
     }
 }
