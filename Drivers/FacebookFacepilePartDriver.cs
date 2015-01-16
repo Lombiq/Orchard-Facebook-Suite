@@ -36,5 +36,25 @@ namespace Piedone.Facebook.Suite.Drivers
             updater.TryUpdateModel(part, Prefix, null, null);
             return Editor(part, shapeHelper);
         }
+
+        protected override void Exporting(FacebookFacepilePart part, ExportContentContext context)
+        {
+            base.Exporting(part, context);
+
+            var element = context.Element(part.PartDefinition.Name);
+
+            element.SetAttributeValue("MaxRows", part.MaxRows);
+            element.SetAttributeValue("Size", part.Size);
+        }
+
+        protected override void Importing(FacebookFacepilePart part, ImportContentContext context)
+        {
+            base.Importing(part, context);
+
+            var partName = part.PartDefinition.Name;
+
+            context.ImportAttribute(partName, "MaxRows", value => part.MaxRows = int.Parse(value));
+            context.ImportAttribute(partName, "Size", value => part.Size = value);
+        }
     }
 }

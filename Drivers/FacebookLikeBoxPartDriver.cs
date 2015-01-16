@@ -36,5 +36,31 @@ namespace Piedone.Facebook.Suite.Drivers
             updater.TryUpdateModel(part, Prefix, null, null);
             return Editor(part, shapeHelper);
         }
+
+        protected override void Exporting(FacebookLikeBoxPart part, ExportContentContext context)
+        {
+            base.Exporting(part, context);
+
+            var element = context.Element(part.PartDefinition.Name);
+
+            element.SetAttributeValue("PageUrl", part.PageUrl);
+            element.SetAttributeValue("ShowFaces", part.ShowFaces);
+            element.SetAttributeValue("BorderColor", part.BorderColor);
+            element.SetAttributeValue("ShowStream", part.ShowStream);
+            element.SetAttributeValue("ShowHeader", part.ShowHeader);
+        }
+
+        protected override void Importing(FacebookLikeBoxPart part, ImportContentContext context)
+        {
+            base.Importing(part, context);
+
+            var partName = part.PartDefinition.Name;
+
+            context.ImportAttribute(partName, "PageUrl", value => part.PageUrl = value);
+            context.ImportAttribute(partName, "ShowFaces", value => part.ShowFaces = bool.Parse(value));
+            context.ImportAttribute(partName, "BorderColor", value => part.BorderColor = value);
+            context.ImportAttribute(partName, "ShowStream", value => part.ShowStream = bool.Parse(value));
+            context.ImportAttribute(partName, "ShowHeader", value => part.ShowHeader = bool.Parse(value));
+        }
     }
 }
