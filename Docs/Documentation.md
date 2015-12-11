@@ -77,4 +77,4 @@ The module depends on [Facebook SDK](https://github.com/Lombiq/Orchard-Facebook-
 After installing the module and enabling the features you'll get a bunch of new widgets. This way, the individual social plugins can be used as widgets.
 If you want to use these widgets attached to content types, take a look at [Content Widgets](https://github.com/Lombiq/Orchard-Content-Widgets).
 
-## See the [Version history](VersionHistory.md)
+**See the [Version history](VersionHistory.md)**
