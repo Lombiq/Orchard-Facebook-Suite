@@ -1,7 +1,7 @@
 ﻿@{ Layout.Title = T("Facebook Suite Settings").ToString(); }
 @model Piedone.Facebook.Suite.Models.FacebookSuiteSettingsPart
 <fieldset>
-    <legend>@T("Facebook App Settings")</legend><span class="hint">@T("If set, Facebook Suite features will behave as part of the app.")</span>
+    <legend>@T("Facebook App Settings")</legend>@Html.Hint(T("If set, Facebook Suite features will behave as part of the app."))
     <ol>
         <li>
             @Html.LabelFor(model => model.AppId, T("App ID"))
